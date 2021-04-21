@@ -1,7 +1,7 @@
  > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
  > Prompt text is any lines beginning with "\>"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
-# Task Scheduler 
+# Priorities
  > Your author list below should include links to all members GitHub (remove existing author).
  
  > Authors: [Joseph Monge](https://github.com/jlmonge)
@@ -27,15 +27,13 @@
 > For our project we will be designing and implementing a task scheduler that keeps track of week-to-week activities. The complexity of each task and sub-task will be categorized  depending on how important or necessary the tasks are to the user. This project will demonstrate the intricacies of a week-to-week schedule and how involved planing simple events and meetings can become. 
 
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- >   * [toolname](link) - Short description
- 
-> * [C++] (https://www.cplusplus.com/)- To implement our project we will be using C++ as the programming language. 
-> * [git/github] (https://github.com/) - We will be using the git version control system to monitor our progress and workflow.
-> * [valgrind] (https://valgrind.org/)- We will use Valgrind to identify memory issues and leaks. 
+> * [C++](https://www.cplusplus.com/)- To implement our project we will be using C++ as the programming language. 
+> * [Git/Github](https://github.com/) - We will be using the git version control system to monitor our progress and workflow.
+> * [Valgrind](https://valgrind.org/)- We will use Valgrind to identify memory issues and leaks. 
 
  > * What will be the input/output of your project?
- > * inputs - The user will be able to create a title, description, type of event, the priority it gets, duration, and due date. 
- > * outputs - The user can choose from a menu to display the events according to a specific category.
+ > * inputs -  title, description, type of event, the priority it gets, duration, and due date. 
+ > * outputs - menu that displays the events according to a specific category.
 
  > * What are the two design patterns you will be using? For each design pattern you must explain in 4-5 sentences:
  >   * Why you picked this pattern and what feature you will implement with it
@@ -43,7 +41,11 @@
  >   * Why the chosen design pattern will lead to a good solution to that problem
  > * This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
  
-> We will be using the Composite design pattern in order to address the issue on how tasks are going to be categorized and the complexity of each task and sub-task. Since the tasks the user may implement in the scheduler can vary in type, we can allow the user to create their task and then modify that to fit in with their predefined categories. Using the composite design pattern, the user can create a rudimentary object of type Task
+> We will be using the Composite design pattern in order to address the issue on how tasks are going to be categorized. It will also address the complexity of each task and sub-task. Since the tasks the user may implement in the scheduler can vary in type, we can allow the user to create their task and then modify that to fit in with their predefined categories. Using the composite design pattern, the user can create a rudimentary object of type Task that goes under the category the user defines it under.
+
+> We'll also be using the Visitor design pattern to allow the user to output tasks in certain categories. For example, users will be able to filter tasks by the type of task or when the task is due. Without implementing this design pattern, we would have to include functions in each class to provide various types of output, which is more tedious to implement than using the Visitor design pattern. With this design pattern, we can easily extract only the information we want from each task and output to the user at their request.
+>
+Represent an operation to be performed on the elements of an object structure. Visitor lets you define a new operation without changing the classes of the elements on which it operates.
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
