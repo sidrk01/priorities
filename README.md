@@ -45,7 +45,6 @@
 
 > We'll also be using the Visitor design pattern to allow the user to output tasks in certain categories. For example, users will be able to filter tasks by the type of task or when the task is due. Without implementing this design pattern, we would have to include functions in each class to provide various types of output, which is more tedious to implement than using the Visitor design pattern. With this design pattern, we can easily extract only the information we want from each task and output to the user at their request.
 >
-Represent an operation to be performed on the elements of an object structure. Visitor lets you define a new operation without changing the classes of the elements on which it operates.
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
