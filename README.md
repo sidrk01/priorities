@@ -5,9 +5,9 @@
  > Your author list below should include links to all members GitHub (remove existing author).
  
   Authors: [Joseph Monge](https://github.com/jlmonge)
- > [Sidharth Ramkumar](https://github.com/sidrk01)
- > [Alexander Silva](https://github.com/asilv067)
- > [Cheyenne Ayyoub](https://github.com/cheyenneayyoub)
+ [Sidharth Ramkumar](https://github.com/sidrk01)
+ [Alexander Silva](https://github.com/asilv067)
+ [Cheyenne Ayyoub](https://github.com/cheyenneayyoub)
  
  > You will be forming a group of **THREE** students and working on an interesting project. A list of proposed project ideas that have been successful in previous quarters is given in the project specifications link on iLearn. You can select an idea from the list, start thinking about the features you will implement, what design patterns can help you implement them, and why. If you want to propose your own original idea, you will have to contact an instructor to discuss the project and obtain written permission before you submit your project proposal. Your project needs to implement two design patterns.The project work should be divided almost equally among team members and each member is expected to work on at least one design pattern (more than one partner may work on a pattern) and some of its test cases. You can of course help each other, but it needs to be clear who will be responsible for which patterns and for which features.
  
@@ -21,19 +21,18 @@
 > * All project phases are to be submitted to this GitHub repository. You should modify this README file to reflect the different phases of the project. In addition, you should regularly hold sprint meetings with your group.
 
 ## Project Description
-> For our project we will be designing and implementing a task scheduler that keeps track of week-to-week activities. The complexity of each task and sub-task will be categorized  depending on how important or necessary the tasks are to the user. This project will demonstrate the intricacies of a week-to-week schedule and how involved planing simple events and meetings can become. 
-> 
-> * [C++](https://www.cplusplus.com/)- To implement our project we will be using C++ as the programming language. 
-> * [Git/Github](https://github.com/) - We will be using the git version control system to monitor our progress and workflow.
-> * [Valgrind](https://valgrind.org/)- We will use Valgrind to identify memory issues and leaks. 
+ For our project we will be designing and implementing a task scheduler that keeps track of week-to-week activities. The complexity of each task and sub-task will be categorized  depending on how important or necessary the tasks are to the user. This project will demonstrate the intricacies of a week-to-week schedule and how involved planing simple events and meetings can become. 
 
- > * inputs -  title, description, type of event, the priority it gets, duration, and due date. 
- > * outputs - menu that displays the events according to a specific category.
+* [C++](https://www.cplusplus.com/)- To implement our project we will be using C++ as the programming language. 
+*  * [Git/Github](https://github.com/) - We will be using the git version control system to monitor our progress and workflow.
+   * [Valgrind](https://valgrind.org/)- We will use Valgrind to identify memory issues and leaks. 
 
-> We will be using the Composite design pattern in order to address the issue on how tasks are going to be categorized. It will also address the complexity of each task and sub-task. Since the tasks the user may implement in the scheduler can vary in type, we can allow the user to create their task and then modify that to fit in with their predefined categories. Using the composite design pattern, the user can create a rudimentary object of type Task that goes under the category the user defines it under.
+  * inputs -  title, description, type of event, the priority it gets, duration, and due date. 
+  * outputs - menu that displays the events according to a specific category.
 
-> We'll also be using the Visitor design pattern to allow the user to output tasks in certain categories. For example, users will be able to filter tasks by the type of task or when the task is due. Without implementing this design pattern, we would have to include functions in each class to provide various types of output, which is more tedious to implement than using the Visitor design pattern. With this design pattern, we can easily extract only the information we want from each task and output to the user at their request.
->
+We will be using the Composite design pattern in order to address the issue on how tasks are going to be categorized. It will also address the complexity of each task and sub-task. Since the tasks the user may implement in the scheduler can vary in type, we can allow the user to create their task and then modify that to fit in with their predefined categories. Using the composite design pattern, the user can create a rudimentary object of type Task that goes under the category the user defines it under.
+
+We'll also be using the Strategy design pattern to allow the user to output tasks in certain categories. For example, users will be able to filter tasks by the type of task or when the task is due. Without implementing this design pattern, we would have to include functions in each class to provide various types of output, which is more tedious to implement than using the Strategy design pattern. With this design pattern, we can easily extract only the information we want from each task and easily include various search and filter algorithms rather than keeping redundant or hard to implement code.
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
