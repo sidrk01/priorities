@@ -4,7 +4,7 @@
 # Priorities
  > Your author list below should include links to all members GitHub (remove existing author).
  
- > Authors: [Joseph Monge](https://github.com/jlmonge)
+  Authors: [Joseph Monge](https://github.com/jlmonge)
  > [Sidharth Ramkumar](https://github.com/sidrk01)
  > [Alexander Silva](https://github.com/asilv067)
  > [Cheyenne Ayyoub](https://github.com/cheyenneayyoub)
