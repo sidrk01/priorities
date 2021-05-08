@@ -47,6 +47,8 @@ We'll also be using the Strategy design pattern to allow the user to output task
 ## Class Diagram
  > Include a class diagram(s) for each design pattern and a description of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper OMT notation (as discussed in the course slides). You may combine multiple design patterns into one diagram if you'd like, but it needs to be clear which portion of the diagram represents which design pattern (either in the diagram or in the description). 
  
+ [OMT_cs100_final.pdf](https://github.com/cs100/final-project-asilv067_cayyo001_jmong006_sramk002/files/6444776/OMT_cs100_final.pdf)
+
  > ## Phase III
  > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
  > * Before the meeting you should perform a sprint plan like you did in Phase II
