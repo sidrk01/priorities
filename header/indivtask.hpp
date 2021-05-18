@@ -26,7 +26,7 @@ class IndivTask : public Task {
 		//virtual ~IndivTask() {}
 		
 		virtual void remove(int id);
-		virtual void markComplete(int id);
+		virtual void  markComplete(int id);
 		virtual string printToDo();
 		virtual void modifyTask(string daysOfWeek, bool recurring, string title, string group);		
 };
