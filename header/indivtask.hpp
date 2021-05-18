@@ -1,12 +1,16 @@
-#ifndef __TASK_HPP__
-#define __TASK_HPP__
+#ifndef __INDIVTASK_HPP__
+#define __INDIVTASK_HPP__
 
-#include <string>
 #include "strategy.cpp"
+#include "task.hpp"
+#include "iostream"
+
 
 using namespace std;
 
-class Task {
+class IndivTask : public Task {
+	private:
+		
 	public:
 		Strategy* sort;
 		string daysOfWeek;
@@ -17,15 +21,15 @@ class Task {
 		string group;
 		bool complete;
 
-		Task() { }
+		IndivTask() { }
 
-		//virtual ~Task() {}
+		//virtual ~IndivTask() {}
 
 		virtual bool checkCompletion(int id) = 0;
 		virtual string printToDo() = 0;
 		virtual void addTask(string daysOfWeek, bool recurring, string title, string group) = 0;
-		virtual void modifyTask(string daysOfWeek, bool recurring, string title, string group, int id) = 0;
-
+		
 };
 
-#endif //__TASK_HPP__
+#endif //__INDIVTASK_HPP__
+
