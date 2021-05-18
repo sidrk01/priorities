@@ -25,10 +25,9 @@ class IndivTask : public Task {
 
 		//virtual ~IndivTask() {}
 
-		virtual bool checkCompletion(int id) = 0;
-		virtual string printToDo() = 0;
-		virtual void addTask(string daysOfWeek, bool recurring, string title, string group) = 0;
-		
+		virtual bool checkCompletion(int id);
+		virtual string printToDo();
+		virtual void modifyTask(string daysOfWeek, bool recurring, string title, string group);		
 };
 
 #endif //__INDIVTASK_HPP__
