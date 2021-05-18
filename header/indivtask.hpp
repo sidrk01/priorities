@@ -1,7 +1,7 @@
 #ifndef __INDIVTASK_HPP__
 #define __INDIVTASK_HPP__
 
-#include "strategy.cpp"
+//#include "strategy.cpp"
 #include "task.hpp"
 #include "iostream"
 
@@ -12,7 +12,7 @@ class IndivTask : public Task {
 	private:
 		
 	public:
-		Strategy* sort;
+//		Strategy* sort;
 		string daysOfWeek;
 		static int nextId;
 		int id;
@@ -21,11 +21,12 @@ class IndivTask : public Task {
 		string group;
 		bool complete;
 
-		IndivTask() { }
+		IndivTask(string daysOfWeek, bool recurring, string title, string group);
 
 		//virtual ~IndivTask() {}
-
-		virtual bool checkCompletion(int id);
+		
+		virtual void remove(int id);
+		virtual void markComplete(int id);
 		virtual string printToDo();
 		virtual void modifyTask(string daysOfWeek, bool recurring, string title, string group);		
 };

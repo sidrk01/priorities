@@ -2,13 +2,13 @@
 #define __TASK_HPP__
 
 #include <string>
-#include "strategy.cpp"
+//#include "strategy.cpp"
 
 using namespace std;
 
 class Task {
 	public:
-		Strategy* sort;
+//		Strategy* sort;
 		string daysOfWeek;
 		static int nextId;
 		int id;
