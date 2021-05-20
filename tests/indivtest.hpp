@@ -5,7 +5,9 @@
 #include <string>
 
 TEST(IndivConstruct, NewTask){
- 	IndivTask userTask("M", false, "Math", "Homework");
+	const int SIZE = 7;	
+	bool days[SIZE] = {true,false,false,false,false,false,false};
+ 	IndivTask userTask(days, SIZE, false, "Math", "Homework");
 	string s1 = userTask.daysOfWeek;
 	string s2 = userTask.title;
 	string s3 = userTask.group;
