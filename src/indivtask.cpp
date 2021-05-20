@@ -20,7 +20,7 @@ IndivTask::IndivTask(bool dow[], int dow_size, string title, string group) {
     	days[6] = "Su"; 
 	int arrLen = 0;    	
 
-    	for (int i=0; i<7; i++) {
+    	for (int i=0; i<dow_size; i++) {
         	if (dow[i]) {
 			dowVector.push_back(days[i]);
         	}	
