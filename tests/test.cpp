@@ -3,6 +3,7 @@
 
 #include "gtest/gtest.h"
 #include "indivtest.hpp"
+#include "sort_ascendingtest.hpp"
 
 #include <string>
 

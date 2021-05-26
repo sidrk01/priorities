@@ -10,10 +10,9 @@ class Order : public Strategy {
 	private:
 		
 	public:
-	virtual ~Order() = default;
-	virtual bool organize(const Task* tasks) const = 0;		
+	virtual bool organize() const = 0;		
 
-}
+};
 
 
 #endif //__ORDER_H__
