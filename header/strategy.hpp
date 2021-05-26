@@ -9,11 +9,11 @@ using namespace std;
 class Strategy {
 
 	public:
-	vector<Task> todo;
-	Strategy(){
-		
-		Task* userInput = this;	
-		todo.push_back(&userInput);
+	vector<Task*> todo;
+	Strategy(vector<Task*> userInput){
+		for (int i = 0; i < userInput.size(); i++)}
+			todo.push_back(userInput.at(i));
+		}
 	}
 	
 };
