@@ -1,8 +1,8 @@
 #ifndef __INDIV_TEST_HPP__
 #define __INDIV_TEST_HPP__
 
-#include "../src/indivtask.cpp"
 #include <string>
+#include "../header/indivtask.hpp"
 
 TEST(IndivConstruct, NewTask){
  	IndivTask userTask("M", false, "Math", "Homework");
@@ -36,4 +36,10 @@ TEST(IndivConstruct, GroupTask){
 }
 
 
+TEST(IndivConstruct, CheckComplete){
+	IndivTask userTask("W", false, "Groceries", "Shopping");
+	userTask.markComplete(1);
+
+	EXPECT_EQ(userTask.complete, true);
+}
 #endif //__INDIV_TEST_HPP__

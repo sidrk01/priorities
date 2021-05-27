@@ -6,12 +6,12 @@
 
 using namespace std;
 
-class Order : public Strategy {
+class Order {
 	private:
 		
 	public:
-	virtual bool organize() const = 0;		
-
+	virtual bool organize() = 0;		
+	~Order() = default;
 };
 
 

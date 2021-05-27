@@ -8,15 +8,15 @@ class Sort_Ascending: public Order {
 	Strategy* item1;
 	unsigned int i;
 		
-	void swap(Task* xp, Task* yp){
+	void swap(int x, int y){
 		Task* temp = nullptr;
-		temp = xp;
-		delete xp;
+		temp = item1->todo.at(x);
+	//	delete xp;
 		
-		xp = yp;
-		yp = temp;
+		item1->todo.at(x) = item1->todo.at(y);
+		item1->todo.at(y) = temp;
 
-		delete temp;
+	//	delete temp;
 		
 	}
 		
@@ -26,10 +26,12 @@ class Sort_Ascending: public Order {
 		
 		for (j = 0; j < item1->todo.size() - i - 1; j++){
 			if (item1->todo.at(j)->complete == false){
-				swap(item1->todo.at(j), item1->todo.at(j + 1));
+				swap(j, j + 1);
 			}
 		}
-		}		
+		}
+	
+	return true;		
 	}
 	
 	bool ascending_dow(){
