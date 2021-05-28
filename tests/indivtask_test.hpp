@@ -23,4 +23,12 @@ TEST(IndivConstruct, MulipleDaysOfWeek){
 	EXPECT_EQ(fullStr, "WSU Biology");
 }
 
+TEST(IndivID, MultTasks){
+	IndivTask userTask("nnynnyy", "Biology");
+	IndivTask userTask1("nnynnyy", "Biology");
+		
+
+        EXPECT_EQ(userTask1.id, 2);
+
+}
 #endif //__INDIVTASK_TEST_HPP__
