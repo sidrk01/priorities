@@ -54,20 +54,22 @@ class Sort_Ascending: public Order {
                 for (i = 0; i < item1->todo.size() - 1; i++){
 
                 for (j = 0; j < item1->todo.size() - i - 1; j++){
-                for (unsigned i = 0; i < item1->todo.at(j)->title.length(); i++){
-			
-			if (item1->todo.at(j)->title.at(j) >  item1->todo.at(j + 1)->title.at(j))
+			char tmp1 = (item1->todo.at(j)->title).at(0);
+			char tmp2 = (item1->todo.at(j + 1)->title).at(0);
+			cout << "item1->todo.at(i)" << tmp1 << endl;
+			cout << "item1->todo.at(i)" << tmp2 << endl; 
+			if (tmp1 >  tmp2)
 			 swap(j, j + 1);
-			i = item1->todo.at(j)->title.length();	
+			}
 		}        
-                        }
-                }
+               
 
         return true;
 	}
-		
+	
+	
 	bool ascending_id(){
- 	        int i, j;
+/* 	        int i, j;
                 for (i = 0; i < item1->todo.size() - 1; i++){
 
                 for (j = 0; j < item1->todo.size() - i - 1; j++){
@@ -76,9 +78,10 @@ class Sort_Ascending: public Order {
                         }
                 }
         }
-
+*/
         return true;	
 	}
+
 	
 	Sort_Ascending(int userChoice, Strategy* taskInit){
 		i = userChoice;	

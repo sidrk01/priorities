@@ -13,10 +13,10 @@ class Task {
                 string daysOfWeek;
                 string title;
                 string group;
-		static int nextId;
+//		static int nextId;
 		int id;
 		
-		Task() { id = nextId++; }
+//		Task() { id = nextId++; }
 		//virtual ~Task() {}
 
 		virtual void markComplete() = 0;
@@ -25,6 +25,6 @@ class Task {
 		virtual void remove() = 0;
 };
 
-int Task::nextId = 1;
+// int Task::nextId = 1;
 
 #endif //__TASK_HPP__
