@@ -16,15 +16,14 @@ class IndivTask : public Task {
 		string daysOfWeek;
 		string title;
 		bool complete;
-		string group;
-		IndivTask(bool dow[], int dow_size, string title, string group);
+		IndivTask(const string& dow, string title);
 
 		//virtual ~IndivTask() {}
 		
 		virtual void remove();
 		virtual void  markComplete();
 		virtual string printToDo();
-		virtual void modifyTask(bool dow[], int dow_size, string title, string group);		
+		virtual void modifyTask(const string& dow, string title);		
 };
 
 #endif //__INDIVTASK_HPP__
