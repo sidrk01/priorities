@@ -4,7 +4,7 @@
 //#include "strategy.cpp"
 #include "task.hpp"
 #include "iostream"
-
+#include "vector"
 
 using namespace std;
 
@@ -14,21 +14,16 @@ class IndivTask : public Task {
 	public:
 //		Strategy* sort;
 		string daysOfWeek;
-		static int nextId;
-		int id;
 		string title;
-		bool recurring;
-		string group;
 		bool complete;
-
-		IndivTask(string daysOfWeek, bool recurring, string title, string group);
+		IndivTask(const string& dow, string title);
 
 		//virtual ~IndivTask() {}
 		
-		virtual void remove(int id);
-		virtual void  markComplete(int id);
+		virtual void remove();
+		virtual void  markComplete();
 		virtual string printToDo();
-		virtual void modifyTask(string daysOfWeek, bool recurring, string title, string group);		
+		virtual void modifyTask(const string& dow, string title);		
 };
 
 #endif //__INDIVTASK_HPP__
