@@ -24,11 +24,11 @@ TEST(IndivConstruct, MulipleDaysOfWeek){
 }
 
 TEST(IndivID, MultTasks){
-	IndivTask userTask("nnynnyy", "Biology");
-	IndivTask userTask1("nnynnyy", "Biology");
+	Task* userTask = new IndivTask("nnynnyy", "Biology");
+	Task* userTask1 = new IndivTask("nnynnyy", "Biology");
 		
 
-        EXPECT_EQ(userTask1.id, 2);
+        EXPECT_EQ(userTask1->id, 2);
 
 }
 #endif //__INDIVTASK_TEST_HPP__
