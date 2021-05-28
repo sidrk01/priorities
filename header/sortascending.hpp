@@ -2,6 +2,7 @@
 #define __SORT_ASCENDING_HPP__
 
 #include "order.hpp"
+#include <string>
 
 class Sort_Ascending: public Order {
 	public:
@@ -29,28 +30,58 @@ class Sort_Ascending: public Order {
 				swap(j, j + 1);
 			}
 		}
-		}
+	}
 	
 	return true;		
 	}
 	
 	bool ascending_dow(){
-		
+		int i, j;
+                for (i = 0; i < item1->todo.size() - 1; i++){
+
+                for (j = 0; j < item1->todo.size() - i - 1; j++){
+                        if (item1->todo.at(j)->title > item1->todo.at(j+1)->title){
+                                swap(j, j + 1);
+                        }
+                }
+        }
+
+        return true;		
 	}
 
 	bool ascending_title(){
-	
+                int i, j;
+                for (i = 0; i < item1->todo.size() - 1; i++){
+
+                for (j = 0; j < item1->todo.size() - i - 1; j++){
+                for (unsigned i = 0; i < item1->todo.at(j)->title.length(); i++){
+			
+			if (item1->todo.at(j)->title.at(j) >  item1->todo.at(j + 1)->title.at(j))
+			 swap(j, j + 1);
+			i = item1->todo.at(j)->title.length();	
+		}        
+                        }
+                }
+
+        return true;
 	}
 		
 	bool ascending_id(){
-	
+ 	        int i, j;
+                for (i = 0; i < item1->todo.size() - 1; i++){
+
+                for (j = 0; j < item1->todo.size() - i - 1; j++){
+                        if (item1->todo.at(j)->id > item1->todo.at(j+1)->id){
+                                swap(j, j + 1);
+                        }
+                }
+        }
+
+        return true;	
 	}
 	
-	Sort_Ascending(vector<bool>userChoice, Strategy* taskInit){
-		i = 0;	
-		while (!userChoice.at(i)){
-		i++;			
-		}
+	Sort_Ascending(int userChoice, Strategy* taskInit){
+		i = userChoice;	
 		item1 = taskInit;
 	}
 
@@ -60,9 +91,25 @@ class Sort_Ascending: public Order {
 	}
 
 	virtual bool organize() {
-	   if(i == 0){
-		return ascending_done();			
-	   }			
+	bool func_compl = false;	
+	   switch (i){
+		case 1:
+		func_compl = ascending_done();
+		break;
+
+		case 2:
+		func_compl = ascending_dow();
+		break;
+
+		case 3:
+		func_compl = ascending_title();
+		break;
+
+		case 4:
+		func_compl = ascending_id();
+		break;
+	  }	
+		return func_compl;			
 	}
 
 	
