@@ -2,12 +2,8 @@
 #define __TEST_HPP__
 
 #include "gtest/gtest.h"
-<<<<<<< HEAD
-#include "indivtest.hpp"
 #include "sort_ascendingtest.hpp"
-=======
 #include "indivtask_test.hpp"
->>>>>>> 8a210df59f84ea041af4abc909994519e8b4f47d
 
 #include <string>
 

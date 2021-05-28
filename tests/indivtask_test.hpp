@@ -1,8 +1,8 @@
 #ifndef __INDIVTASK_TEST_HPP__
 #define __INDIVTASK_TEST_HPP__
 
-#include "../src/indivtask.cpp"
 #include <string>
+#include "../header/indivtask.hpp"
 
 TEST(IndivConstruct, OneDayOfWeek){
  	IndivTask userTask("ynnnnnn", "Math");
@@ -23,4 +23,19 @@ TEST(IndivConstruct, MulipleDaysOfWeek){
 	EXPECT_EQ(fullStr, "WSU Biology");
 }
 
+TEST(IndivComplete, NoneComplete){
+	IndivTask userTask("nnynnyy", "Biology");
+	IndivTask userTask2("nnynnyy", "Biology");
+
+	EXPECT_EQ(userTask.complete, false);
+}
+
+TEST(IndivComplete, OneComplete){
+        IndivTask userTask("nnynnyy", "Biology");
+        IndivTask userTask2("nnynnyy", "Biology");
+
+	userTask.markComplete();
+
+        EXPECT_EQ(userTask.complete, true);
+}
 #endif //__INDIVTASK_TEST_HPP__
