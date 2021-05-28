@@ -88,7 +88,6 @@ TEST(SortAscending, IdComplete){
 
 }
 
-
 TEST(SortAscending, TitleSort){
         vector<Task*> userTasks;
         Task* task1 = new IndivTask ("ynnnnnn", "Math");

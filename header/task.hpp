@@ -2,7 +2,7 @@
 #define __TASK_HPP__
 
 #include <string>
-//#include "strategy.cpp"
+//#include "strategy.hpp"
 
 using namespace std;
 
