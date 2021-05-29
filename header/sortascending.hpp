@@ -69,7 +69,7 @@ class Sort_Ascending: public Order {
 	
 	
 	bool ascending_id(){
-/* 	        int i, j;
+ 	        int i, j;
                 for (i = 0; i < item1->todo.size() - 1; i++){
 
                 for (j = 0; j < item1->todo.size() - i - 1; j++){
@@ -78,7 +78,7 @@ class Sort_Ascending: public Order {
                         }
                 }
         }
-*/
+
         return true;	
 	}
 

@@ -8,6 +8,24 @@
 using namespace std;
 
 
+/*
+TEST(SortAscending, IdComplete){
+        vector<Task*> userTasks;
+        IndivTask u1("ynnnnnn", "Math");
+        IndivTask u2("ynnnnnn", "Math");
+        Task* task1 = &u1;
+        Task* task2 = &u2;
+        userTasks.push_back(task1);
+        userTasks.push_back(task2);
+
+        Strategy* init = new Strategy(userTasks);
+        Sort_Ascending* checkComp = new Sort_Ascending(4, init);
+        checkComp->organize();
+        EXPECT_EQ(init->todo.at(0), task2);
+
+}
+*/
+
 TEST(SortAscendingTests, NoneComplete){
 	vector<Task*> userTasks;
 	Task* task1 = new IndivTask("ynnnnnn", "Math");
@@ -73,25 +91,8 @@ TEST(SortAscending, CheckTwoComplete){
 }
 
 /*
-TEST(SortAscending, IdComplete){
+TEST(SortAscending, TitleSort1){        
 	vector<Task*> userTasks;
-	IndivTask u1("ynnnnnn", "Math");
-        IndivTask u2("ynnnnnn", "Math");
-        Task* task1 = &u1;
-	Task* task2 = &u2;
-	userTasks.push_back(task1);
-	userTasks.push_back(task2);
-
-	Strategy* init = new Strategy(userTasks);
-	Sort_Ascending* checkComp = new Sort_Ascending(4, init);
-	checkComp->organize();
-	EXPECT_EQ(init->todo.at(0), task2);
-
-}
-
-
-TEST(SortAscending, TitleSort){
-        vector<Task*> userTasks;
         Task* task1 = new IndivTask ("ynnnnnn", "Math");
         Task* task2 = new IndivTask ("ynnnnnn", "Math");
         userTasks.push_back(task1);
@@ -133,7 +134,6 @@ TEST(SortAscending, daysofWeekSort){
 	userT.push_back((Task*) new IndivTask("yyynnnn", "Math"));
 	}
 
-	cout << userT.at(0)->daysOfWeek << endl;	
 	Strategy* init = new Strategy(userT);
         Sort_Ascending* checkComp = new Sort_Ascending(2, init);
         checkComp->organize();
