@@ -39,8 +39,10 @@ class Sort_Ascending: public Order {
 		int i, j;
                 for (i = 0; i < item1->todo.size() - 1; i++){
 
-                for (j = 0; j < item1->todo.size() - i - 1; j++){
-                        if (item1->todo.at(j)->title > item1->todo.at(j+1)->title){
+                for (j = 0; j < item1->todo.size() - i - 1; j++) { 
+		cout << (item1->todo.at(j)->daysOfWeek).length()  << endl;
+		cout << item1->todo.at(j)->daysOfWeek << endl;
+                        if ((item1->todo.at(j)->daysOfWeek).length() >  (item1->todo.at(j+1)->daysOfWeek).length()){
                                 swap(j, j + 1);
                         }
                 }
@@ -56,8 +58,6 @@ class Sort_Ascending: public Order {
                 for (j = 0; j < item1->todo.size() - i - 1; j++){
 			char tmp1 = (item1->todo.at(j)->title).at(0);
 			char tmp2 = (item1->todo.at(j + 1)->title).at(0);
-			cout << "item1->todo.at(i)" << tmp1 << endl;
-			cout << "item1->todo.at(i)" << tmp2 << endl; 
 			if (tmp1 >  tmp2)
 			 swap(j, j + 1);
 			}
@@ -95,27 +95,17 @@ class Sort_Ascending: public Order {
 
 	virtual bool organize() {
 	bool func_compl = false;	
-	   switch (i){
-		case 1:
+	if (i == 1)	
 		func_compl = ascending_done();
-		break;
-
-		case 2:
+	if (i == 2)
 		func_compl = ascending_dow();
-		break;
-
-		case 3:
+	if (i == 3)
 		func_compl = ascending_title();
-		break;
-
-		case 4:
+	if (i == 4)
 		func_compl = ascending_id();
-		break;
-	  }	
-		return func_compl;			
+	  	
+	return func_compl;				
 	}
-
-	
 };
 
 #endif //__SORT_ASCENDING_HPP__

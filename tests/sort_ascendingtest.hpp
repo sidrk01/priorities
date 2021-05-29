@@ -88,7 +88,7 @@ TEST(SortAscending, IdComplete){
 	EXPECT_EQ(init->todo.at(0), task2);
 
 }
-*/
+
 
 TEST(SortAscending, TitleSort){
         vector<Task*> userTasks;
@@ -100,7 +100,7 @@ TEST(SortAscending, TitleSort){
         Strategy* init = new Strategy(userTasks);
         Sort_Ascending* checkComp = new Sort_Ascending(3, init);
         checkComp->organize();
-	EXPECT_EQ(init->todo.at(0), task2);
+	EXPECT_EQ(init->todo.at(0), task1);
 	
 }
 
@@ -118,5 +118,26 @@ TEST(SortAscending, TitleSort2){
         checkComp->organize();
 
         EXPECT_EQ(init->todo.at(0), task3);
+} 
+*/
+
+TEST(SortAscending, daysofWeekSort){
+	vector<IndivTask*> userTask;
+
+	userTask.push_back(new IndivTask("yyynnnn", "Math"));
+	userTask.push_back(new IndivTask("yyynnnn", "Math"));
+	userTask.push_back(new IndivTask("yynnnnn", "Math"));
+
+	vector<Task*> userT;
+	for (unsigned int i = 0; i < userTask.size(); i++){
+	userT.push_back((Task*) new IndivTask("yyynnnn", "Math"));
+	}
+
+	cout << userT.at(0)->daysOfWeek << endl;	
+	Strategy* init = new Strategy(userT);
+        Sort_Ascending* checkComp = new Sort_Ascending(2, init);
+        checkComp->organize();
+
+	EXPECT_EQ(init->todo.at(0)->daysOfWeek, "MT"); 
 }
 #endif //__SORT_ASCENDING_TEST_HPP__
