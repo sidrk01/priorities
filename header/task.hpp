@@ -6,6 +6,8 @@
 
 using namespace std;
 
+class Order; 
+
 class Task {
 	public:
 //		Strategy* sort;

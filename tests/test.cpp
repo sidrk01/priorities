@@ -2,10 +2,13 @@
 #define __TEST_HPP__
 
 #include "gtest/gtest.h"
-#include "sort_ascendingtest.hpp"
-#include "indivtask_test.hpp"
 #include "../src/indivtask.cpp"
-//#include "sort_descendingtests.hpp"
+#include "../src/sortdescending.cpp"
+#include "../src/sortascending.cpp"
+#include "sort_ascendingtest.hpp"
+#include "sort_descendingtests.hpp"
+#include "indivtask_test.hpp"
+//#include "sort_randomtest.hpp"
 
 #include <string>
 

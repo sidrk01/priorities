@@ -1,6 +1,7 @@
 #ifndef __SORT_DESCENDING_HPP__
 #define __SORT_DESCENDING_HPP__
 
+#include "../header/indivtask.hpp"
 #include "../header/sortdescending.hpp"
 
 
