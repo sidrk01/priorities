@@ -7,8 +7,6 @@
 using namespace std;
 
 class Order {
-	private:
-		
 	public:
 	virtual bool organize() = 0;		
 	~Order() = default;

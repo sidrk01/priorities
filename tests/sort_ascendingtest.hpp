@@ -6,8 +6,6 @@
 
 #include "iostream"
 using namespace std;
-
-
 /*
 TEST(SortAscending, IdComplete){
         vector<Task*> userTasks;
@@ -24,6 +22,7 @@ TEST(SortAscending, IdComplete){
         EXPECT_EQ(init->todo.at(0), task2);
 
 }
+
 */
 
 TEST(SortAscendingTests, NoneComplete){
@@ -90,7 +89,6 @@ TEST(SortAscending, CheckTwoComplete){
         EXPECT_EQ(init->todo.at(0), task3);
 }
 
-/*
 TEST(SortAscending, TitleSort1){        
 	vector<Task*> userTasks;
         Task* task1 = new IndivTask ("ynnnnnn", "Math");
@@ -120,7 +118,6 @@ TEST(SortAscending, TitleSort2){
 
         EXPECT_EQ(init->todo.at(0), task3);
 } 
-*/
 
 TEST(SortAscending, daysofWeekSort){
 	vector<IndivTask*> userTask;

@@ -13,9 +13,6 @@ class IndivTask : public Task {
 		
 	public:
 //		Strategy* sort;
-		string daysOfWeek;
-		string title;
-		bool complete;
 		IndivTask(const string& dow, string title);
 
 		//virtual ~IndivTask() {}

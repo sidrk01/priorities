@@ -4,34 +4,26 @@
 #include "order.hpp"
 #include <string>
 
-class Sort_Descending : public Order {
+class Sort_Descending: public Order {
 	public: 
-	Strategy* item1; 
-	unsigned int i; 
+	Strategy* item2; 
+	unsigned int j; 
 
 	void swap_two(int x, int y){
 		Task* temp = nullptr;
-		temp = item1->todo.at(x);
+		temp = item2->todo.at(x);
 
-		item1->todo.at(x) = item1->todo.at(y);
-		item1->todo.at(y) = temp;
+		item2->todo.at(x) = item2->todo.at(y);
+		item2->todo.at(y) = temp;
 	}
 
-
-	Sort_Descending(int userChoice, Strategy* taskInit){
-		i = userChoice;
-		item1 = taskInit;
-	}
-
-	~Sort_Descending() {
-	}
 
 	bool descending_done(){
 		int i, j;
-		for (i = 0; i < item1->todo.size() - 1; i++){
+		for (i = 0; i < item2->todo.size() - 1; i++){
 		
-		for (j = 0; j < item1->todo.size() - i - 1; j++){
-			if (item1->todo.at(j)->complete == true){
+		for (j = 0; j < item2->todo.size() - i - 1; j++){
+			if (item2->todo.at(j)->complete == true){
 				swap_two(j, j + 1);
 			}
 		}
@@ -42,10 +34,10 @@ class Sort_Descending : public Order {
 
 	bool descending_dow(){
 		int i, j;
-                for (i = 0; i < item1->todo.size() - 1; i++){
+                for (i = 0; i < item2->todo.size() - 1; i++){
 
-                for (j = 0; j < item1->todo.size() - i - 1; j++) { 
-                        if ((item1->todo.at(j)->daysOfWeek).length() <  (item1->todo.at(j+1)->daysOfWeek).length()){
+                for (j = 0; j < item2->todo.size() - i - 1; j++) { 
+                        if ((item2->todo.at(j)->daysOfWeek).length() <  (item2->todo.at(j+1)->daysOfWeek).length()){
                                 swap_two(j, j + 1);
                         }
                 }
@@ -54,27 +46,12 @@ class Sort_Descending : public Order {
         return true;		
 	}
 
-	bool descending_title(){
-                int i, j;
-                for (i = 0; i < item1->todo.size() - 1; i++){
-
-                for (j = 0; j < item1->todo.size() - i - 1; j++){
-			char tmp1 = (item1->todo.at(j)->title).at(0);
-			char tmp2 = (item1->todo.at(j + 1)->title).at(0);
-			if (tmp1 >  tmp2)
-			 swap_two(j, j + 1);
-			}
-		}        
-               
-
-        return true;
-	}
 
 	bool descending_id(){
 		int i, j;
-		for (i = 0; i < item1->todo.size() - 1; i++){
-                for (j = 0; j < item1->todo.size() - i - 1; j++){
-                        if (item1->todo.at(j)->id < item1->todo.at(j+1)->id){
+		for (i = 0; i < item2->todo.size() - 1; i++){
+                for (j = 0; j < item2->todo.size() - i - 1; j++){
+                        if (item2->todo.at(j)->id < item2->todo.at(j+1)->id){
                                 swap_two(j, j + 1);
                         }
                 }
@@ -82,11 +59,44 @@ class Sort_Descending : public Order {
 	
 	return true;
 	}
-	}
 
+
+	 bool descending_title(){
+                int i, j, k;
+                unsigned int l1, l2;
+                unsigned char tmp1, tmp2;
+                unsigned int inc = 0;
+                for (i = 0; i < item2->todo.size() - 1; i++){
+
+                for (j = 0; j < item2->todo.size() - i - 1; j++){
+                        for (k = 0; k < (item2->todo.at(j)->title).length(); k++){
+                        tmp1 = (item2->todo.at(j)->title).at(k);
+                        tmp2 = (item2->todo.at(j + 1)->title).at(k);
+                        if (tmp1 < tmp2){
+                        inc++;
+                        }
+                        if (inc != 0){
+                        swap(j, j + 1);
+                        inc = 0;
+                        }
+                	}
+		}	
+		}		
+
+        return true;
+        }
+	
+	Sort_Descending(int userC, Strategy* taskIn){
+                j = userC;
+                item2 = taskIn;
+        }
+
+        ~Sort_Descending() {
+        }
+	
 	virtual bool organize() {
 		bool func_compl = false;
-	switch (i){
+	switch (j){
 		case 1:
 		func_compl = descending_complete();
 		break;
