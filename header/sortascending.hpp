@@ -2,25 +2,11 @@
 #define __SORT_ASCENDING_HPP__
 
 #include "order.hpp"
-#include "strategy.hpp"
 #include <string>
 
 class Sort_Ascending: public Order {
 	public:
-	Strategy* item1;
-	unsigned int i;
 		
-	void swap(int x, int y){
-		Task* temp = nullptr;
-		temp = item1->todo.at(x);
-	//	delete xp;
-		
-		item1->todo.at(x) = item1->todo.at(y);
-		item1->todo.at(y) = temp;
-
-	//	delete temp;
-		
-	}
 		
 	bool ascending_done(){
 		int i, j;
@@ -93,8 +79,8 @@ class Sort_Ascending: public Order {
 
 	
 	Sort_Ascending(int userChoice, Strategy* taskInit){
-		i = userChoice;	
-		item1 = taskInit;
+		this->i = userChoice;	
+		this->item1 = taskInit;
 	}
 
 
@@ -104,13 +90,13 @@ class Sort_Ascending: public Order {
 
 	virtual bool organize() {
 	bool func_compl = false;	
-	if (i == 1)	
+	if (this->i == 1)	
 		func_compl = ascending_done();
-	if (i == 2)
+	if (this->i == 2)
 		func_compl = ascending_dow();
-	if (i == 3)
+	if (this->i == 3)
 		func_compl = ascending_title();
-	if (i == 4)
+	if (this->i == 4)
 		func_compl = ascending_id();
 	  	
 	return func_compl;				

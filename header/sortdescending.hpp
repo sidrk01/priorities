@@ -2,29 +2,17 @@
 #define __SORT_DESCENDING_HPP__
 
 #include "order.hpp"
-#include "strategy.hpp"
 #include <string>
 
 class Sort_Descending: public Order {
 	public: 
-	Strategy* item2; 
-	unsigned int j; 
-
-	void swap_two(int x, int y){
-		Task* temp = nullptr;
-		temp = item2->todo.at(x);
-
-		item2->todo.at(x) = item2->todo.at(y);
-		item2->todo.at(y) = temp;
-	}
-
 
 	bool descending_done(){
 		int i, j;
-		for (i = 0; i < item2->todo.size() - 1; i++){
+		for (i = 0; i < item1->todo.size() - 1; i++){
 		
-		for (j = 0; j < item2->todo.size() - i - 1; j++){
-			if (item2->todo.at(j)->complete == true){
+		for (j = 0; j < item1->todo.size() - i - 1; j++){
+			if (item1->todo.at(j)->complete == true){
 				swap_two(j, j + 1);
 			}
 		}
@@ -35,10 +23,10 @@ class Sort_Descending: public Order {
 
 	bool descending_dow(){
 		int i, j;
-                for (i = 0; i < item2->todo.size() - 1; i++){
+                for (i = 0; i < item1->todo.size() - 1; i++){
 
-                for (j = 0; j < item2->todo.size() - i - 1; j++) { 
-                        if ((item2->todo.at(j)->daysOfWeek).length() <  (item2->todo.at(j+1)->daysOfWeek).length()){
+                for (j = 0; j < item1->todo.size() - i - 1; j++) { 
+                        if ((item1->todo.at(j)->daysOfWeek).length() <  (item1->todo.at(j+1)->daysOfWeek).length()){
                                 swap_two(j, j + 1);
                         }
                 }
@@ -50,9 +38,9 @@ class Sort_Descending: public Order {
 
 	bool descending_id(){
 		int i, j;
-		for (i = 0; i < item2->todo.size() - 1; i++){
-                for (j = 0; j < item2->todo.size() - i - 1; j++){
-                        if (item2->todo.at(j)->id < item2->todo.at(j+1)->id){
+		for (i = 0; i < item1->todo.size() - 1; i++){
+                for (j = 0; j < item1->todo.size() - i - 1; j++){
+                        if (item1->todo.at(j)->id < item1->todo.at(j+1)->id){
                                 swap_two(j, j + 1);
                         }
                 }
@@ -67,15 +55,16 @@ class Sort_Descending: public Order {
                 unsigned int l1, l2;
                 unsigned char tmp1, tmp2;
                 unsigned int inc = 0;
-                for (i = 0; i < item2->todo.size() - 1; i++){
+                for (i = 0; i < item1->todo.size() - 1; i++){
 
-                for (j = 0; j < item2->todo.size() - i - 1; j++){
-                        for (k = 0; k < (item2->todo.at(j)->title).length(); k++){
-                        tmp1 = (item2->todo.at(j)->title).at(k);
-                        tmp2 = (item2->todo.at(j + 1)->title).at(k);
+                for (j = 0; j < item1->todo.size() - i - 1; j++){
+                        for (k = 0; k < (item1->todo.at(j)->title).length(); k++){
+                        tmp1 = (item1->todo.at(j)->title).at(k);
+                        tmp2 = (item1->todo.at(j + 1)->title).at(k);
                         if (tmp1 < tmp2){
                         inc++;
-                        }
+			k = (item1->todo.at(j)->title).length();
+			}
                         if (inc != 0){
                         swap_two(j, j + 1);
                         inc = 0;
@@ -88,8 +77,8 @@ class Sort_Descending: public Order {
         }
 	
 	Sort_Descending(unsigned int userC, Strategy* taskIn){
-                j = userC;
-                item2 = taskIn;
+                this->i = userC;
+                this->item1 = taskIn;
         }
 
         ~Sort_Descending() {
@@ -97,13 +86,13 @@ class Sort_Descending: public Order {
 	
 	virtual bool organize() {
 		bool func_compl = false;
-	if (j == 1)	
+	if (this->i == 1)	
 		func_compl = descending_done();
- 	if (j == 2)
+ 	if (this->i == 2)
 		func_compl = descending_dow();
-	if (j == 3)
+	if (this->i == 3)
 		func_compl = descending_title();
-	if (j == 4)
+	if (this->i == 4)
 		func_compl = descending_id();
 
 	return func_compl;
