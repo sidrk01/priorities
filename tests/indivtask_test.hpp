@@ -4,6 +4,14 @@
 #include "../src/indivtask.cpp"
 #include <string>
 
+TEST(IndivID, MultTasks){
+        IndivTask userTask("nnynnyy", "Biology");
+        IndivTask userTask1("nnynnyy", "Astrology");
+
+        EXPECT_EQ(userTask1.id, 2);
+
+}
+
 TEST(IndivConstruct, OneDayOfWeek){
  	IndivTask userTask("ynnnnnn", "Math");
 	string s1 = userTask.daysOfWeek;

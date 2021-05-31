@@ -33,7 +33,6 @@ IndivTask::IndivTask(const string& dow, string title) {
     	}
 
 	this->title = title;
-	this->group = group;
 }
 
 void IndivTask::markComplete() {
@@ -41,10 +40,6 @@ void IndivTask::markComplete() {
 }
 
 void IndivTask::remove() {
-	
-}
-
-string IndivTask::printToDo() {
 	
 }
 

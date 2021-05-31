@@ -13,18 +13,16 @@ class IndivTask : public Task {
 		
 	public:
 //		Strategy* sort;
-		string daysOfWeek;
-		string title;
-		bool complete;
+		
 		IndivTask(const string& dow, string title);
-
 		//virtual ~IndivTask() {}
 		
 		virtual void remove();
-		virtual void  markComplete();
-		virtual string printToDo();
-		virtual void modifyTask(const string& dow, string title);		
+		virtual void markComplete();
+		virtual void modifyTask(const string& dow, string title);
 };
+
+
 
 #endif //__INDIVTASK_HPP__
 
