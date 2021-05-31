@@ -4,6 +4,7 @@
 #include "gtest/gtest.h"
 #include "sort_ascendingtest.hpp"
 #include "indivtask_test.hpp"
+#include "../src/indivtask.cpp"
 //#include "sort_descendingtests.hpp"
 
 #include <string>

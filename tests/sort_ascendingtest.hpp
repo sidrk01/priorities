@@ -6,7 +6,8 @@
 
 #include "iostream"
 using namespace std;
-/*
+
+
 TEST(SortAscending, IdComplete){
         vector<Task*> userTasks;
         IndivTask u1("ynnnnnn", "Math");
@@ -19,11 +20,12 @@ TEST(SortAscending, IdComplete){
         Strategy* init = new Strategy(userTasks);
         Sort_Ascending* checkComp = new Sort_Ascending(4, init);
         checkComp->organize();
-        EXPECT_EQ(init->todo.at(0), task2);
+	cout << task1->id << endl;
+	cout << task2->id << endl;
+        EXPECT_EQ(init->todo.at(0), task1);
 
 }
 
-*/
 
 TEST(SortAscendingTests, NoneComplete){
 	vector<Task*> userTasks;
@@ -86,7 +88,7 @@ TEST(SortAscending, CheckTwoComplete){
         Strategy* init = new Strategy(userTasks);
         Sort_Ascending* checkComp = new Sort_Ascending(1, init);
 	checkComp->organize();
-        EXPECT_EQ(init->todo.at(0), task3);
+        EXPECT_EQ(init->todo.at(0), task1);
 }
 
 TEST(SortAscending, TitleSort1){        
@@ -107,7 +109,7 @@ TEST(SortAscending, TitleSort2){
         vector<Task*> userTasks;
         Task* task1 = new IndivTask("ynnnnnn", "Math");
         Task* task2 = new IndivTask("ynnnnnn", "Math");
-        Task* task3 = new IndivTask("ynnnnnn", "English");
+        Task* task3 = new IndivTask("yynnnnn", "English");
         userTasks.push_back(task1);
         userTasks.push_back(task2);
         userTasks.push_back(task3);
@@ -116,22 +118,17 @@ TEST(SortAscending, TitleSort2){
         Sort_Ascending* checkComp = new Sort_Ascending(3, init);
         checkComp->organize();
 
-        EXPECT_EQ(init->todo.at(0), task3);
+        EXPECT_EQ(init->todo.at(2), task3);
 } 
 
 TEST(SortAscending, daysofWeekSort){
-	vector<IndivTask*> userTask;
+	vector<Task*> userTask;
 
 	userTask.push_back(new IndivTask("yyynnnn", "Math"));
 	userTask.push_back(new IndivTask("yyynnnn", "Math"));
 	userTask.push_back(new IndivTask("yynnnnn", "Math"));
 
-	vector<Task*> userT;
-	for (unsigned int i = 0; i < userTask.size(); i++){
-	userT.push_back((Task*) new IndivTask("yyynnnn", "Math"));
-	}
-
-	Strategy* init = new Strategy(userT);
+	Strategy* init = new Strategy(userTask);
         Sort_Ascending* checkComp = new Sort_Ascending(2, init);
         checkComp->organize();
 

@@ -2,6 +2,7 @@
 #define __SORT_DESCENDING_HPP__
 
 #include "order.hpp"
+#include "strategy.hpp"
 #include <string>
 
 class Sort_Descending: public Order {
@@ -76,7 +77,7 @@ class Sort_Descending: public Order {
                         inc++;
                         }
                         if (inc != 0){
-                        swap(j, j + 1);
+                        swap_two(j, j + 1);
                         inc = 0;
                         }
                 	}
@@ -86,7 +87,7 @@ class Sort_Descending: public Order {
         return true;
         }
 	
-	Sort_Descending(int userC, Strategy* taskIn){
+	Sort_Descending(unsigned int userC, Strategy* taskIn){
                 j = userC;
                 item2 = taskIn;
         }
@@ -96,23 +97,14 @@ class Sort_Descending: public Order {
 	
 	virtual bool organize() {
 		bool func_compl = false;
-	switch (j){
-		case 1:
-		func_compl = descending_complete();
-		break;
-
-		case 2:	
+	if (j == 1)	
+		func_compl = descending_done();
+ 	if (j == 2)
 		func_compl = descending_dow();
-		break;
-
-		case 3:
+	if (j == 3)
 		func_compl = descending_title();
-		break;
-
-		case 4:
+	if (j == 4)
 		func_compl = descending_id();
-		break;
-	}
 
 	return func_compl;
 	}

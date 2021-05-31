@@ -1,12 +1,12 @@
 #ifndef __SORT_DESCENDING_HPP__
 #define __SORT_DESCENDING_HPP__
 
-#include "../header/indivtask.hpp"
 #include "../header/sortdescending.hpp"
+
 
 #include "iostream"
 using namespace std;
-/*
+
 TEST(SortDescending, IdComplete){
         vector<Task*> userTasks;
         IndivTask u1("ynnnnnn", "Math");
@@ -16,11 +16,11 @@ TEST(SortDescending, IdComplete){
         userTasks.push_back(task1);
         userTasks.push_back(task2);
         Strategy* init = new Strategy(userTasks);
-        Sort_Descending* user1 = new Sort_Descending(4, init);
-	user1->organize();
+        Sort_Descending user1(4, init);
+	user1.organize();
         EXPECT_EQ(init->todo.at(0), task1);
 }
-*/
+
 TEST(SortDescending, CheckNoneComplete){
 	vector<Task*> userTasks;
         Task* task1 = new IndivTask("ynnnnnn", "Math");

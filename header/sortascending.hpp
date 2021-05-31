@@ -2,6 +2,7 @@
 #define __SORT_ASCENDING_HPP__
 
 #include "order.hpp"
+#include "strategy.hpp"
 #include <string>
 
 class Sort_Ascending: public Order {
@@ -40,8 +41,6 @@ class Sort_Ascending: public Order {
                 for (i = 0; i < item1->todo.size() - 1; i++){
 
                 for (j = 0; j < item1->todo.size() - i - 1; j++) { 
-		cout << (item1->todo.at(j)->daysOfWeek).length()  << endl;
-		cout << item1->todo.at(j)->daysOfWeek << endl;
                         if ((item1->todo.at(j)->daysOfWeek).length() >  (item1->todo.at(j+1)->daysOfWeek).length()){
                                 swap(j, j + 1);
                         }
