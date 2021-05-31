@@ -1,15 +1,13 @@
 #include "../header/indivtask.hpp"
 #include <vector>
 #include <sstream>
+#include <map>
 
 using namespace std;
 
 IndivTask::IndivTask(const string& dow, string title) {
     	this->complete = false;
-	if (dow.length() != 7) {
-        	throw std::invalid_argument("Something went wrong");
-    	}
-    
+
     	map<int,char> days;
     	days[0] = 'M';
     	days[1] = 'T';
@@ -37,10 +35,6 @@ IndivTask::IndivTask(const string& dow, string title) {
 
 void IndivTask::markComplete() {
 	this->complete = true;
-}
-
-void IndivTask::remove() {
-	
 }
 
 void IndivTask::modifyTask(const string& dow, string title){		
