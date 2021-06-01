@@ -147,7 +147,7 @@ void Client::inputTask(bool isPile, bool isToPile, bool isMod) {
 			getline(cin, id_input);
 			stringstream validate(id_input);
 			if (validate >> id && !(validate >> id_input) && id >= 1 && id <= 100) {// REPLACE 100 WITH nextId
-				cout << "modifying task" << endl;
+//				cout << "modifying task" << endl;
 				break;
 			}
 			
@@ -223,7 +223,7 @@ void Client::inputCompleteTask(bool isPile) {
 			taskInit->todo.at(i)->markComplete(idChoice);
 		}
 	}	
-	cout << "complete\n";
+//	cout << "complete\n";
 }
 
 void Client::inputRemoveTask(bool isPile) {
@@ -233,7 +233,7 @@ void Client::inputRemoveTask(bool isPile) {
                         taskInit->todo.erase(taskInit->todo.begin() + i);
                 }
         }
-	cout << "remove\n";
+//	cout << "remove\n";
 }
 
 int Client::inputPrintMenu() {
