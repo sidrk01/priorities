@@ -33,22 +33,20 @@ IndivTask::IndivTask(const string& dow, string title) {
     	}
 
 	this->title = title;
-	this->group = group;
+	//this->group = group;
 }
 
-void IndivTask::markComplete() {
+void IndivTask::markComplete(int id) {
 	this->complete = true;
 }
 
-void IndivTask::remove() {
-	
+void IndivTask::removeTask(int id) {
+	if (this->id == id) {
+		delete this;
+	}	
 }
 
-string IndivTask::printToDo() {
-	
-}
-
-void IndivTask::modifyTask(const string& dow, string title){		
+void IndivTask::modifyTask(string dow, string title, int id){		
 	if (dow.length() != 7) {
                 throw std::invalid_argument("Something went wrong");
         }
