@@ -8,6 +8,7 @@
 #include "indivtask_test.hpp"
 #include "sort_ascendingtest.hpp"
 #include "sort_descendingtests.hpp"
+#include "strategytest.hpp"
 //#include "sort_randomtest.hpp"
 
 #include <string>
