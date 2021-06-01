@@ -76,7 +76,7 @@ TEST(SortAscending, CheckOneComplete){
         userTasks.push_back(task2);
 	userTasks.push_back(task3);
 
-	task3->markComplete();
+	task3->markComplete(3);
 
         Strategy* init = new Strategy(userTasks);
         Sort_Ascending* checkComp = new Sort_Ascending(1, init);
@@ -95,7 +95,7 @@ TEST(SortAscending, CheckTwoComplete){
         userTasks.push_back(task2);
         userTasks.push_back(task3);
 
-	task1->markComplete();
+	task1->markComplete(1);
 
         Strategy* init = new Strategy(userTasks);
         Sort_Ascending* checkComp = new Sort_Ascending(1, init);
@@ -170,7 +170,7 @@ TEST(SortDescending, CheckOneComplete){
         userTasks.push_back(task2);
 	userTasks.push_back(task3);
 
-	task3->markComplete();
+	task3->markComplete(3);
 
         Strategy* init = new Strategy(userTasks);
         Sort_Descending* user1 = new Sort_Descending(1, init);
@@ -189,7 +189,7 @@ TEST(SortDescending, CheckTwoComplete){
         userTasks.push_back(task2);
         userTasks.push_back(task3);
 
-	task1->markComplete();
+	task1->markComplete(1);
 
         Strategy* init = new Strategy(userTasks);
         Sort_Descending* user1 = new Sort_Descending(1, init);

@@ -42,16 +42,9 @@ TEST(IndivComplete, OneComplete){
         IndivTask userTask("nnynnyy", "Biology");
         IndivTask userTask2("nnynnyy", "Biology");
 
-	userTask.markComplete();
+	userTask.markComplete(1);
 
         EXPECT_EQ(userTask.complete, true);
 }
 
-TEST(IndivID, MultTasks){
-	Task* userTask = new IndivTask("nnynnyy", "Biology");
-	Task* userTask1 = new IndivTask("nnynnyy", "Biology");
-		
-
-        EXPECT_EQ(userTask1->id, 2);
-}
 #endif //__INDIVTASK_TEST_HPP__

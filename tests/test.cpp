@@ -5,9 +5,9 @@
 #include "../src/indivtask.cpp"
 #include "../src/sortdescending.cpp"
 #include "../src/sortascending.cpp"
+#include "indivtask_test.hpp"
 #include "sort_ascendingtest.hpp"
 #include "sort_descendingtests.hpp"
-#include "indivtask_test.hpp"
 //#include "sort_randomtest.hpp"
 
 #include <string>
