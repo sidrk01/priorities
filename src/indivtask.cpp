@@ -51,7 +51,9 @@ void IndivTask::markComplete(int id) {
 }
 
 void IndivTask::modifyTask(string dow, string title, int id){		
-        map<int,char> days;
+	this->daysOfWeek.clear();
+	string new_dow = dow;   
+     map<int,char> days;
         days[0] = 'M';
         days[1] = 'T';
         days[2] = 'W';
@@ -60,11 +62,11 @@ void IndivTask::modifyTask(string dow, string title, int id){
         days[5] = 'S';
         days[6] = 'U';
 
-        for (int i=0; i<dow.length(); i++) {
-                if (dow[i] == 'y') {
+        for (int i=0; i<new_dow.length(); i++) {
+                if (new_dow[i] == 'y') {
                         this->daysOfWeek += days[i];
                 }
-                else if (dow[i] == 'n'){
+                else if (new_dow[i] == 'n'){
                         continue;
                 }
                 else {
