@@ -76,7 +76,7 @@ TEST(SortAscending, CheckOneComplete){
         userTasks.push_back(task2);
 	userTasks.push_back(task3);
 
-	task3->markComplete();
+	task3->markComplete(3);
 
         Strategy* init = new Strategy(userTasks);
         Sort_Ascending* checkComp = new Sort_Ascending(1, init);
@@ -95,7 +95,7 @@ TEST(SortAscending, CheckTwoComplete){
         userTasks.push_back(task2);
         userTasks.push_back(task3);
 
-	task1->markComplete();
+	task1->markComplete(1);
 
         Strategy* init = new Strategy(userTasks);
         Sort_Ascending* checkComp = new Sort_Ascending(1, init);
@@ -147,6 +147,15 @@ TEST(SortAscending, daysofWeekSort){
 	EXPECT_EQ(init->todo.at(0)->daysOfWeek, "MT"); 
 }
 
+TEST(SortAscending, noneofWeekSort){
+	vector<Task*> userTask;
+	
+	Strategy* init = new Strategy(userTask);
+	Sort_Ascending* checkComp = new Sort_Ascending(2, init);
+	
+	EXPECT_ANY_THROW(checkComp->organize());	
+}
+	
 TEST(SortDescending, CheckNoneComplete){
         vector<Task*> userTasks;
         Task* task1 = new IndivTask("ynnnnnn", "Math");
@@ -170,7 +179,7 @@ TEST(SortDescending, CheckOneComplete){
         userTasks.push_back(task2);
 	userTasks.push_back(task3);
 
-	task3->markComplete();
+	task3->markComplete(3);
 
         Strategy* init = new Strategy(userTasks);
         Sort_Descending* user1 = new Sort_Descending(1, init);
@@ -189,7 +198,7 @@ TEST(SortDescending, CheckTwoComplete){
         userTasks.push_back(task2);
         userTasks.push_back(task3);
 
-	task1->markComplete();
+	task1->markComplete(1);
 
         Strategy* init = new Strategy(userTasks);
         Sort_Descending* user1 = new Sort_Descending(1, init);
@@ -210,6 +219,20 @@ TEST(SortDescending, TitleSort){
 	EXPECT_EQ(init->todo.at(0), task2);	
 }
 
+<<<<<<< HEAD
+=======
+TEST(SortDescending, noneWeekSort){
+        vector<Task*> userTask;
+
+        Strategy* init = new Strategy(userTask);
+        Sort_Descending* checkComp = new Sort_Descending(2, init);
+
+        EXPECT_ANY_THROW(checkComp->organize());
+}
+
+
+/*
+>>>>>>> sramk002/print-function
 TEST(SortRandom, SortRand){
         //---- testing sort_rand:       
         vector<Task*> userTasks;

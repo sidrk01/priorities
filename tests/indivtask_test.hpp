@@ -42,8 +42,12 @@ TEST(IndivComplete, OneComplete){
         IndivTask userTask("nnynnyy", "Biology");
         IndivTask userTask2("nnynnyy", "Biology");
 
-	userTask.markComplete();
+	userTask.markComplete(1);
 
         EXPECT_EQ(userTask.complete, true);
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> sramk002/print-function
 #endif //__INDIVTASK_TEST_HPP__

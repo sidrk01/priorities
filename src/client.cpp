@@ -1,6 +1,9 @@
 #include "../header/client.hpp"
 #include <sstream>
 
+Client::Client(){
+	this->taskInit = new Strategy();
+}
 void Client::displayGraphic() {
         cout << "   ___      _          _ __  _       " << endl;
         cout << "  / _ \\____(_)__  ____(_) /_(_)__ ___" << endl;
@@ -117,8 +120,11 @@ void Client::inputTask(bool isPile, bool isToPile, bool isMod) {
 	valid = false;
 
 	if (!isMod) {	// create the task (pile)
-		
-	}
+//	  if (isPile){
+	   	
+//	   Task* u1 = new TaskPile(dow, title);
+//           userTasks.push_back(u1);		
+}	
 	else {		// modify the task (pile)
 		int id;
 		string id_input;

@@ -6,10 +6,18 @@
 #include"indivtask_test.hpp"
 #include "../src/sortdescending.cpp"
 #include "../src/sortascending.cpp"
+<<<<<<< HEAD
 #include "../src/sortrandom.cpp"
 #include "sort_ascendingtest.hpp"
 #include "sort_descendingtests.hpp"
 //#include "indivtask_test.hpp"
+=======
+//#include "indivtask_test.hpp"
+//#include "sort_ascendingtest.hpp"
+//#include "sort_descendingtests.hpp"
+//#include "strategytest.hpp"
+
+>>>>>>> sramk002/print-function
 #include <string>
 
 
