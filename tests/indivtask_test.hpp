@@ -4,6 +4,16 @@
 #include <string>
 #include "../header/indivtask.hpp"
 
+
+TEST(IndivID, MultTasks){
+        Task* userTask = new IndivTask("nnynnyy", "Biology");
+        Task* userTask1 = new IndivTask("nnynnyy", "Biology");
+
+
+        EXPECT_EQ(userTask1->id, 2);
+}
+
+
 TEST(IndivConstruct, OneDayOfWeek){
  	IndivTask userTask("ynnnnnn", "Math");
 	string s1 = userTask.daysOfWeek;
@@ -39,11 +49,11 @@ TEST(IndivComplete, OneComplete){
         EXPECT_EQ(userTask.complete, true);
 }
 
-TEST(IndivID, MultTasks){
+/*TEST(IndivID, MultTasks){
 	Task* userTask = new IndivTask("nnynnyy", "Biology");
 	Task* userTask1 = new IndivTask("nnynnyy", "Biology");
 		
 
         EXPECT_EQ(userTask1->id, 2);
-}
+}*/
 #endif //__INDIVTASK_TEST_HPP__
