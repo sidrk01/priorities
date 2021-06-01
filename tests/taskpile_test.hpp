@@ -28,34 +28,6 @@ TEST(TaskPile, TaskInTask){
 	EXPECT_EQ(wat->title, "CS");
 }
 
-/*
-TEST(TaskPile, RemoveTaskPile){
-//	string s = "school";
-        Task* yee = new IndivTask("yyyyyyy","task");
-        TaskPile* hi = new TaskPile(s);
-        TaskPile* wat = new TaskPile("CS");
-        hi->add_task(yee);
-        wat->add_task(hi);
-	//cout << wat->id; 12
-	wat->removeTask(wat->id);
-	EXPECT_EQ(hi->title, "school");
-//
-
-	vector<Task*> vec;
-	Task* t1 = new IndivTask("yyyyyyy","t1");
-	TaskPile* tp1 = new TaskPile("taskpile");
-	tp1->add_task(t1);
-	vec.push_back(tp1);
-	int s1 = vec.size();
-	cout << endl << "before remove " << vec.at(0);
-	tp1->removeTask(tp1->id);
-	cout << endl << "after remove " << vec.at(0);
-	int s2 = vec.size();
-
-	EXPECT_EQ(s1>s2,true);	
-}
-*/
-
 TEST(TaskPile, ModifyTaskPile){
 	string s = "school";
         Task* yee = new IndivTask("yyyyyyy","task");
