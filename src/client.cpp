@@ -85,6 +85,7 @@ bool Client::getIsPile() {
 
 bool Client::getIsToPile() {
 	string choice;
+	int pileId; 
 	bool valid;
         do {
                 cout << "Within a task pile? (y/n) ";
@@ -92,9 +93,14 @@ bool Client::getIsToPile() {
                 valid = validateIsToPile(choice);
         } while (!valid);
 	
-	if (choice[0] == 'y')
+	if (choice[0] == 'y'){
+		pileId = validateId();
+		taskInit->idPass(pileId);	
 		return true;
+	} else {
+		taskInit->idPass(0);
 	return false;
+	}
 }
 
 void Client::inputTask(bool isPile, bool isToPile, bool isMod) {
