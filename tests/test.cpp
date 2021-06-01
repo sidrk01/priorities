@@ -2,7 +2,7 @@
 #define __TEST_HPP__
 
 #include "gtest/gtest.h"
-//#include "indivtask_test.hpp"
+#include "indivtask_test.hpp"
 #include "taskpile_test.hpp"
 
 #include <string>
