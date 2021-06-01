@@ -10,9 +10,8 @@ class Task {
 	public:
 //		Strategy* sort;
 		bool complete;
-        //string daysOfWeek;
-        string title;
-        //string group;
+        	string daysOfWeek;
+		string title;
 		static int nextId;
 		int id;
 
@@ -21,7 +20,6 @@ class Task {
 		virtual void markComplete() = 0;
 		virtual void modifyTask(const string& dow, string title, int id) = 0; 
 		virtual void remove(int id) = 0;
-		//virtual void addTask(/*const string& dow, string title*/ Task* t) = 0;
 };
 
 int Task::nextId = 1;
