@@ -86,6 +86,5 @@ We'll also be using the Strategy design pattern to allow the user to output task
  > * If the user inputs 7, it will automatically sort randomly.
  > * If the user inputs 8, they will exit the program.
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
- 
+To test each function within our program, we used simple unit tests to mimic the input provided by the client class to the function. This allowed us to verify the functionality for individual parts of the program. 
  
