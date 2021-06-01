@@ -1,9 +1,15 @@
 #include "../header/client.hpp"
+#include "../header/indivtask.hpp"
+#include "../header/taskpile.hpp"
+#include "../header/sortascending.hpp"
+#include "../header/sortdescending.hpp"
+#include "../header/sortrandom.hpp"
 #include <sstream>
 
 Client::Client(){
 	this->taskInit = new Strategy();
 }
+
 void Client::displayGraphic() {
         cout << "   ___      _          _ __  _       " << endl;
         cout << "  / _ \\____(_)__  ____(_) /_(_)__ ___" << endl;
@@ -120,12 +126,14 @@ void Client::inputTask(bool isPile, bool isToPile, bool isMod) {
 	valid = false;
 
 	if (!isMod) {	// create the task (pile)
-//	  if (isPile){
-	   	
-//	   Task* u1 = new TaskPile(dow, title);
-//           userTasks.push_back(u1);		
-}	
-	else {		// modify the task (pile)
+	  if (isPile){
+		Task* u1 = new TaskPile(title);
+		taskInit->todo.push_back(u1);	
+	  } else {
+		Task* u2 = new IndivTask(dow, title);
+		taskInit->todo.push_back(u2);
+		}
+	} else {		// modify the task (pile)
 		int id;
 		string id_input;
 		while (true) {
@@ -133,12 +141,18 @@ void Client::inputTask(bool isPile, bool isToPile, bool isMod) {
 			getline(cin, id_input);
 			stringstream validate(id_input);
 			if (validate >> id && !(validate >> id_input) && id >= 1 && id <= 100) {// REPLACE 100 WITH nextId
-				cout << "modidying task" << endl;
+				cout << "modifying task" << endl;
 				break;
 			}
 			
 			cin.clear();
 			cerr << "IDs are >= 1 and <= " << ".\n"; // add nextId in between these two strings
+		}
+		for (unsigned int i = 0; i < taskInit->todo.size(); i++){
+			if (taskInit->todo.at(i)->id == id){
+				taskInit->todo.at(i)->modifyTask(dow, title);
+				i = taskInit->todo.size();
+			}
 		}
 	}
 }
@@ -164,15 +178,25 @@ int Client::inputMenu(const int menuMax) {
 	}
 }
 
-void Client::inputCompleteTask(bool isPile) {
+void Client::inputCompleteTask(bool isPile) {	
+	for (unsigned int i = 0; i < taskInit->todo.size(); i++){
+		if (taskInit->todo.at(i)->id == id){
+			taskInit->todo.at(i)->markComplete(id);
+		}
+	}	
 	cout << "complete\n";
 }
 
 void Client::inputRemoveTask(bool isPile) {
+	for (unsigned int i = 0; i < taskInit->todo.at(i); i++){
+                if (taskInit->todo.at(i)->id == id){
+                        taskInit->todo.erase(taskInit->todo.begin() + i);
+                }
+        }
 	cout << "remove\n";
 }
 
-void Client::inputPrintMenu() {
+int Client::inputPrintMenu() {
 	int pmChoice;
 	const int pmMax = 4;
 
@@ -193,6 +217,7 @@ void Client::inputPrintMenu() {
                         cout << "4" << endl;
                         break;
 	}
+  return pmChoice;
 }
 
 void Client::run() {
@@ -232,20 +257,27 @@ void Client::run() {
                                 break;
                         case 5://ascending
 				// if no tasks (nextId == 1), let user know + break;
-                                inputPrintMenu();
+ 	                        int choice2 = inputPrintMenu();
+				new Sort_Ascending(choice, taskInit);
+				taskInit->print();
                                 break;
                         case 6://descending
 				// if no tasks (nextId == 1), let user know + break;
-				inputPrintMenu();
+				int choice1 = inputPrintMenu();
+				new Sort_Descending(choice1, taskInit);
+				taskInit->print();
 				break;
                         case 7: 
 				// if no tasks (nextId == 1), let user know + break;
                                 // call random sort
+                                new Sort_Random(0, taskInit);
+				taskInit->print();
                                 break;
                         case 8: 
 				// if no tasks (nextId == 1), let user know + break;
                                 // print information about one task (pile)
-                                break;
+                                taskInit->print();
+				break;
 			case 9:
 				cout << "Goodbye!" << endl;
 				displayGraphic();

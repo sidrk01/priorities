@@ -6,6 +6,7 @@
 #include <vector>
 #include "indivtask.hpp"
 #include "strategy.hpp"
+#include "order.hpp"
 
 using namespace std;
 
@@ -26,7 +27,7 @@ class Client {
                 void inputTask(bool isPile, bool isToPile, bool isMod);
 		void inputCompleteTask(bool isPile);
 		void inputRemoveTask(bool isPile);
-                void inputPrintMenu();
+                int inputPrintMenu();
 	public:
 		Client();
 		void run();
