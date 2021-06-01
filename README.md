@@ -65,6 +65,12 @@ We'll also be using the Strategy design pattern to allow the user to output task
  
  ## Screenshots
  > Screenshots of the input/output after running your application
+ > ![Screen Shot 2021-06-01 at 1 56 37 PM](https://user-images.githubusercontent.com/79485389/120390087-23907800-c2e2-11eb-93b5-7f2e3062e49c.png)
+![Screen Shot 2021-06-01 at 1 57 01 PM](https://user-images.githubusercontent.com/79485389/120390100-268b6880-c2e2-11eb-8210-f1b7707c1267.png)
+![Screen Shot 2021-06-01 at 1 57 42 PM](https://user-images.githubusercontent.com/79485389/120390106-29865900-c2e2-11eb-9fa7-bca712409998.png)
+![Screen Shot 2021-06-01 at 1 58 26 PM](https://user-images.githubusercontent.com/79485389/120390111-2b501c80-c2e2-11eb-9d84-e861cc83dcbb.png)
+![Screen Shot 2021-06-01 at 1 58 44 PM](https://user-images.githubusercontent.com/79485389/120390131-3145fd80-c2e2-11eb-89dd-9869ee1ee8ee.png)
+
  ## Installation/Usage
  > Instructions on installing and running your application
  > * First, clone the repository using git clone --recursive https://github.com/cs100/final-project-asilv067_cayyo001_jmong006_sramk002.git
