@@ -62,7 +62,7 @@ TEST(TaskPile, ModifyTaskPile){
         TaskPile* hi = new TaskPile(s);
         hi->add_task(yee);
 	//cout << hi->id; 14
-	hi->modifyTask("nnnnnnn","hello",14);
+	hi->modifyTask("nnnnnnn","hello",hi->id);
 
         EXPECT_EQ(hi->title, "hello");	
 }
@@ -71,7 +71,7 @@ TEST(TaskPile, MarkAsComplete){
 	string s = "school";
 	Task* yee = new IndivTask("yyyyyyy","task");
 	TaskPile* hi = new TaskPile(s);
-	hi->markComplete(16);
+	hi->markComplete(hi->id);
 	//cout << hi->id;
 	EXPECT_EQ(hi->complete, true);
 

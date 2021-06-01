@@ -32,19 +32,19 @@ TEST(IndivConstruct, MulipleDaysOfWeek){
 }
 
 TEST(IndivComplete, NoneComplete){
-	IndivTask userTask("nnynnyy", "Biology");
-	IndivTask userTask2("nnynnyy", "Biology");
+	Task* userTask = new IndivTask("nnynnyy", "Biology");
+	Task* userTask1 = new IndivTask("nnynnyy", "Biology");
 
-	EXPECT_EQ(userTask.complete, false);
+	EXPECT_EQ(userTask->complete, false);
 }
 
 TEST(IndivComplete, OneComplete){
-        IndivTask userTask("nnynnyy", "Biology");
-        IndivTask userTask2("nnynnyy", "Biology");
+	Task* userTask = new IndivTask("nnynnyy", "Biology");
+        Task* userTask1 = new IndivTask("nnynnyy", "Biology");
 
-	userTask.markComplete(1);
+	userTask->markComplete(userTask->id);
 
-        EXPECT_EQ(userTask.complete, true);
+        EXPECT_EQ(userTask->complete, true);
 }
 
 #endif //__INDIVTASK_TEST_HPP__
