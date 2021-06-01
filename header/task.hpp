@@ -19,7 +19,7 @@ class Task {
 		
 		virtual void markComplete(int id) = 0;
 		virtual void modifyTask(string dow, string title, int id) = 0; 
-		virtual void removeTask(int id) = 0;
+//		virtual void removeTask(int id) = 0;
 };
 
 int Task::nextId = 1;

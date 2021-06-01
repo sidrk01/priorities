@@ -20,7 +20,7 @@ class IndivTask : public Task {
 
 		//virtual ~IndivTask() {}
 		
-		virtual void removeTask(int id);
+//		virtual void removeTask(int id);
 		virtual void markComplete(int id);
 		virtual void modifyTask(string dow, string title, int id);		
 };

@@ -40,12 +40,14 @@ void IndivTask::markComplete(int id) {
 	this->complete = true;
 }
 
+/*
 void IndivTask::removeTask(int id) {
 	if (this->id == id) {
 		delete this;
+	//	return;
 	}	
 }
-
+*/
 void IndivTask::modifyTask(string dow, string title, int id){		
 	if (dow.length() != 7) {
                 throw std::invalid_argument("Something went wrong");

@@ -34,22 +34,26 @@ void TaskPile::modifyTask(string dow, string title, int id){
         }
 }
 
+/*
 void TaskPile::removeTask(int id){ //use this
-	if(this->id == id){
-		delete this;
-		return;
-	}
 	for(int i = 0; i < tasks.size(); ++i){
+		cout << "in for loop of remove task" << endl;
 		// if(id == tasks.at(i)->id){
 		// 	Task* t = tasks.at(i);
 		// 	tasks.erase(tasks.begin()+i);
 		// 	delete t;
 		// }
 		tasks.at(i)->removeTask(id);
-	}	
+	}
+	if(this->id == id){
+                cout << "in if of remove task" << endl;
+                delete this;
+                cout << "after delete this" << endl;
+                //return;
+         }	
 }
 
-
+*/
 
 //can but can only make one 
 //not getting info if we're making task pile or indiv task so we dont have 
