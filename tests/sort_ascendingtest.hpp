@@ -219,8 +219,6 @@ TEST(SortDescending, TitleSort){
 	EXPECT_EQ(init->todo.at(0), task2);	
 }
 
-<<<<<<< HEAD
-=======
 TEST(SortDescending, noneWeekSort){
         vector<Task*> userTask;
 
@@ -231,8 +229,7 @@ TEST(SortDescending, noneWeekSort){
 }
 
 
-/*
->>>>>>> sramk002/print-function
+
 TEST(SortRandom, SortRand){
         //---- testing sort_rand:       
         vector<Task*> userTasks;

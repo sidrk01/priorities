@@ -46,8 +46,5 @@ TEST(IndivComplete, OneComplete){
 
         EXPECT_EQ(userTask.complete, true);
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> sramk002/print-function
 #endif //__INDIVTASK_TEST_HPP__
