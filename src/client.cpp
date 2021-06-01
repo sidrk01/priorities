@@ -85,6 +85,7 @@ bool Client::getIsPile() {
 
 bool Client::getIsToPile() {
 	string choice;
+	int pileId; 
 	bool valid;
         do {
                 cout << "Within a task pile? (y/n) ";
@@ -92,9 +93,14 @@ bool Client::getIsToPile() {
                 valid = validateIsToPile(choice);
         } while (!valid);
 	
-	if (choice[0] == 'y')
+	if (choice[0] == 'y'){
+		pileId = validateId();
+		taskInit->idPass(pileId);	
 		return true;
+	} else {
+		taskInit->idPass(0);
 	return false;
+	}
 }
 
 void Client::inputTask(bool isPile, bool isToPile, bool isMod) {
@@ -195,6 +201,21 @@ int Client::inputMenu(const int menuMax) {
 	}
 }
 
+void Client::sortascend(){
+	Sort_Ascending* s1 = new Sort_Ascending(inputPrintMenu(), taskInit);
+	s1->organize();
+}
+
+void Client::sortdescend() {
+	Sort_Descending* s2 = new Sort_Descending(inputPrintMenu(), taskInit);
+	s2->organize();
+}
+
+void Client::sortrand(){
+	Sort_Random* s3 = new Sort_Random(0, taskInit);
+	s3->organize();
+}
+
 void Client::inputCompleteTask(bool isPile) {	
 	int idChoice = validateId();
 	for (unsigned int i = 0; i < taskInit->todo.size(); i++){
@@ -276,26 +297,25 @@ void Client::run() {
                                 break;
                         case 5://ascending
 				// if no tasks (nextId == 1), let user know + break;
- 	                        //int choice1 = inputPrintMenu();
-				new Sort_Ascending(inputPrintMenu(), taskInit);
+				sortascend();
 				taskInit->print();
                                 break;
                         case 6://descending
 				// if no tasks (nextId == 1), let user know + break;
 				//int choice2 = inputPrintMenu();
-				new Sort_Descending(inputPrintMenu(), taskInit);
+				sortdescend();
 				taskInit->print();
 				break;
                         case 7: 
 				// if no tasks (nextId == 1), let user know + break;
                                 // call random sort
-                                new Sort_Random(0, taskInit);
+				sortrand();
 				taskInit->print();
                                 break;
                         case 8: 
 				// if no tasks (nextId == 1), let user know + break;
                                 // print information about one task (pile)
-                                taskInit->print();
+				taskInit->print();
 				break;
 			case 9:
 				cout << "Goodbye!" << endl;

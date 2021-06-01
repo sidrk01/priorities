@@ -28,7 +28,11 @@ class Client {
 		void inputCompleteTask(bool isPile);
 		void inputRemoveTask(bool isPile);
                 int inputPrintMenu();
+
 		int validateId();
+		void sortdescend();
+		void sortascend();
+		void sortrand();
 	public:
 		Client();
 		void run();

@@ -118,7 +118,7 @@ TEST(SortAscending, TitleSort2){
         Sort_Ascending* checkComp = new Sort_Ascending(3, init);
         checkComp->organize();
 
-        EXPECT_EQ(init->todo.at(2), task3);
+        EXPECT_EQ(init->todo.at(0), task3);
 } 
 
 TEST(SortAscending, daysofWeekSort){

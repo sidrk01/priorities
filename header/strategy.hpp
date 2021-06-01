@@ -12,7 +12,7 @@ using namespace std;
 
 class Strategy {
 	private:
-
+	
 	void repC(char k, int times){
 		for (int i = 0; i <= times; i++){
         	cout << k;
@@ -47,10 +47,20 @@ class Strategy {
 	<< "||" << setw(8) << todo.at(i)->daysOfWeek << setw(3)  
 	<< "||" << setw(23) << todo.at(i)->title << setw(10) 
 	<< "||" << setw(4) << todo.at(i)->id << setw(4) 
-	<< "||" << endl;	
+	<< "||" << setw(17) << subtaskAdd(i) <<  endl;	
 	}
 	}
-	
+
+	string subtaskAdd(int i){
+		int pileNum = pileIDs.at(i);
+		for (unsigned int j = 0; j < todo.size(); j++){
+			if (todo.at(j)->id == pileNum){
+				return todo.at(j)->title;
+			}
+		}
+		return "";
+	}	
+
 	public:
 	vector<Task*> todo;
 	Strategy(){ //vector<Task*> userInput){
@@ -59,12 +69,18 @@ class Strategy {
 //		}
 	}
 
+	vector<int> pileIDs;
+
 	bool print(){
 		displayTableHeader();
 		printContents(); 	
-	
+			
 	return true;
-	}	
+	}
+
+	bool idPass(int pileId){
+		pileIDs.push_back(pileId);	
+	}
 };
 
 

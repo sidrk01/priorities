@@ -24,28 +24,29 @@ bool Sort_Ascending::organize() {
 }
 
 bool Sort_Ascending::ascending_title(){
-                int i, j, k;
+                int i, j, k,  comp;
                 unsigned int l1, l2;
 		unsigned char tmp1, tmp2;
 		unsigned int inc = 0;
+		
 		for (i = 0; i < item1->todo.size() - 1; i++){
-
-                for (j = 0; j < item1->todo.size() - i - 1; j++){
-			for (k = 0; k < (item1->todo.at(j)->title).length(); k++){
-			tmp1 = (item1->todo.at(j)->title).at(k);
-			tmp2 = (item1->todo.at(j + 1)->title).at(k);
-			if (tmp1 > tmp2){
-			inc++;
-			}	
-			if (inc != 0){ 
-			swap(j, j + 1);
-			inc = 0;
+		for (k = 0; k < item1->todo.size() - i - 1; k++){	
+	
+			if (item1->todo.at(k)->title > item1->todo.at(k + 1)->title){
+				comp = (item1->todo.at(k + 1)->title).length();
+			} else {
+				comp = (item1->todo.at(k)->title).length();
 			}
+			
+			for (j = 0; j < comp; j++){
+				if ((item1->todo.at(k)->title).at(j) > (item1->todo.at(k + 1)->title).at(j)){
+				swap(k, k + 1);
+				j = comp;
+				}
 			}
 		}
-		}        
-               
 
+		}
         return true;
 }
 
