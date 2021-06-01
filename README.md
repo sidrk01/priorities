@@ -64,27 +64,27 @@ We'll also be using the Strategy design pattern to allow the user to output task
  > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
  
  ## Screenshots
- > Screenshots of the input/output after running your application
- > ![Screen Shot 2021-06-01 at 1 56 37 PM](https://user-images.githubusercontent.com/79485389/120390087-23907800-c2e2-11eb-93b5-7f2e3062e49c.png)
+  Screenshots of the input/output after running your application
+  ![Screen Shot 2021-06-01 at 1 56 37 PM](https://user-images.githubusercontent.com/79485389/120390087-23907800-c2e2-11eb-93b5-7f2e3062e49c.png)
 ![Screen Shot 2021-06-01 at 1 57 01 PM](https://user-images.githubusercontent.com/79485389/120390100-268b6880-c2e2-11eb-8210-f1b7707c1267.png)
 ![Screen Shot 2021-06-01 at 1 57 42 PM](https://user-images.githubusercontent.com/79485389/120390106-29865900-c2e2-11eb-9fa7-bca712409998.png)
 ![Screen Shot 2021-06-01 at 1 58 26 PM](https://user-images.githubusercontent.com/79485389/120390111-2b501c80-c2e2-11eb-9d84-e861cc83dcbb.png)
 ![Screen Shot 2021-06-01 at 1 58 44 PM](https://user-images.githubusercontent.com/79485389/120390131-3145fd80-c2e2-11eb-89dd-9869ee1ee8ee.png)
 
  ## Installation/Usage
- > Instructions on installing and running your application
- > * First, clone the repository using git clone --recursive https://github.com/cs100/final-project-asilv067_cayyo001_jmong006_sramk002.git
- > * From here, enter the folder using cd final-project-asilv067_cayyo001_jmong006_sramk002.
- > * Once inside, run cmake3 . then make then ./main
- > * Afterwards the client will be presented with a menu. Enter the number and press enter on the keyboard.
- > * If the user inputs 1 then they will be presented with a series of questions that they must answer. Simply follow the directions
- > * If the user inputs 2 then they will be asked for the task's ID and they must input a 7 letter string that consists of "y" or "n" only. This string indicates what days the task will be on; "y" means yes for that day and "n" means no for that day. The user must also input the title of their task.
- > * If the user inputs 3, they will have to input the task's ID that they want to mark as complete.
- > * If the user inputs 4, they will have to input the task's ID that they want to delete.
- > * If the user inputs 5, they will be asked what category to sort by and the user must input a number.
- > * If the user inputs 6, they will be asked what category to sory by and the user must input a number.
- > * If the user inputs 7, it will automatically sort randomly.
- > * If the user inputs 8, they will exit the program.
+  Instructions on installing and running your application
+  * First, clone the repository using git clone --recursive https://github.com/cs100/final-project-asilv067_cayyo001_jmong006_sramk002.git
+  * From here, enter the folder using cd final-project-asilv067_cayyo001_jmong006_sramk002.
+  * Once inside, run cmake3 . then make then ./main
+  * Afterwards the client will be presented with a menu. Enter the number and press enter on the keyboard.
+  * If the user inputs 1 then they will be presented with a series of questions that they must answer. Simply follow the directions
+  * If the user inputs 2 then they will be asked for the task's ID and they must input a 7 letter string that consists of "y" or "n" only. This string indicates what days the task will be on; "y" means yes for that day and "n" means no for that day. The user must also input the title of their task.
+  * If the user inputs 3, they will have to input the task's ID that they want to mark as complete.
+  * If the user inputs 4, they will have to input the task's ID that they want to delete.
+  * If the user inputs 5, they will be asked what category to sort by and the user must input a number.
+  * If the user inputs 6, they will be asked what category to sory by and the user must input a number.
+  * If the user inputs 7, it will automatically sort randomly.
+  * If the user inputs 8, they will exit the program.
  ## Testing
 To test each function within our program, we used simple unit tests to mimic the input provided by the client class to the function. This allowed us to verify the functionality for individual parts of the program. 
  
