@@ -20,9 +20,9 @@ class IndivTask : public Task {
 
 		//virtual ~IndivTask() {}
 		
-		virtual void remove(int id);
-		virtual void  markComplete();
-		virtual void modifyTask(const string& dow, string title, int id);		
+		virtual void removeTask(int id);
+		virtual void markComplete(int id);
+		virtual void modifyTask(string dow, string title, int id);		
 };
 
 #endif //__INDIVTASK_HPP__
