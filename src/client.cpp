@@ -10,6 +10,10 @@ Client::Client(){
 	this->taskInit = new Strategy();
 }
 
+Client::~Client() {
+	delete taskInit;
+}
+
 void Client::displayGraphic() {
         cout << "   ___      _          _ __  _       " << endl;
         cout << "  / _ \\____(_)__  ____(_) /_(_)__ ___" << endl;

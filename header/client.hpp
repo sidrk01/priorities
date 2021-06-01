@@ -35,6 +35,7 @@ class Client {
 		void sortrand();
 	public:
 		Client();
+		~Client();
 		void run();
 };
 
