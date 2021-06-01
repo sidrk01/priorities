@@ -68,6 +68,18 @@ We'll also be using the Strategy design pattern to allow the user to output task
  > Screenshots of the input/output after running your application
  ## Installation/Usage
  > Instructions on installing and running your application
+ > First, clone the repository using git clone --recursive https://github.com/cs100/final-project-asilv067_cayyo001_jmong006_sramk002.git
+ > From here, enter the folder using cd final-project-asilv067_cayyo001_jmong006_sramk002.
+ > Once inside, run cmake3 . then make then ./main
+ > Afterwards the client will be presented with a menu. Enter the number and press enter on the keyboard.
+ > If the user inputs 1 then they will be presented with a series of questions that they must answer. Simply follow the directions
+ > If the user inputs 2 then they will be asked for the task's ID and they must input a 7 letter string that consists of "y" or "n" only. This string indicates what days the task will be on; "y" means yes for that day and "n" means no for that day. The user must also input the title of their task.
+ > If the user inputs 3, they will have to input the task's ID that they want to mark as complete.
+ > If the user inputs 4, they will have to input the task's ID that they want to delete.
+ > If the user inputs 5, they will be asked what category to sort by and the user must input a number.
+ > If the user inputs 6, they will be asked what category to sory by and the user must input a number.
+ > If the user inputs 7, it will automatically sort randomly.
+ > If the user inputs 8, they will exit the program.
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
  
