@@ -1,8 +1,12 @@
 #ifndef __SORT_RANDOMTEST_HPP__
 #define __SORT_RANDOMTEST_HPP___
 
+
+#include "../header/indivtask.hpp"
 #include "../header/sortrandom.hpp"
+#include "iostream"
 #include <string>
+using namespace std;
 
  TEST(SortRandom, SortRand){
   	//---- testing sort_rand:	

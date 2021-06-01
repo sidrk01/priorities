@@ -4,7 +4,7 @@
 #include "../header/indivtask.hpp"
 #include "../header/sortascending.hpp"
 #include "../header/sortdescending.hpp"
-//#include "../header/sortrandom.hpp"
+#include "../header/sortrandom.hpp"
 
 #include "iostream"
 using namespace std;
@@ -209,7 +209,7 @@ TEST(SortDescending, TitleSort){
 	checkComp->organize();
 	EXPECT_EQ(init->todo.at(0), task2);	
 }
-/*
+
 TEST(SortRandom, SortRand){
         //---- testing sort_rand:       
         vector<Task*> userTasks;
@@ -223,5 +223,17 @@ TEST(SortRandom, SortRand){
         
         EXPECT_EQ(checkComp->organize(), true);
 }
-*/        
+
+TEST(SortRandom, Size){
+   	vector<Task*> userTasks;
+        Task* task1 = new IndivTask("ynnnnnn", "Math");
+        Task* task2 = new IndivTask("ynnnnnn", "Math");
+        userTasks.push_back(task1);
+        userTasks.push_back(task2);
+
+        Strategy* init = new Strategy(userTasks);
+        Sort_Random* checkComp = new Sort_Random(1, init);
+	checkComp->organize();
+        EXPECT_EQ(init->todo.size(),2);
+}
 #endif //__SORT_ASCENDING_TEST_HPP__
