@@ -7,7 +7,7 @@
 using namespace std;
 
 class Client {
-	private:
+	private:		
 		void displayGraphic();
 		void displayMainMenu();
                 void displayPrintMenu();

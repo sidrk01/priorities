@@ -33,14 +33,17 @@ IndivTask::IndivTask(const string& dow, string title) {
 	this->title = title;
 }
 
-void IndivTask::markComplete() {
+void IndivTask::remove(int id) {
+	if (this->id == id) {
+		delete this;
+	}
+}
+
+void IndivTask::markComplete(int id) {
 	this->complete = true;
 }
 
-void IndivTask::modifyTask(const string& dow, string title){		
-	if (dow.length() != 7) {
-                throw std::invalid_argument("Something went wrong");
-        }
+void IndivTask::modifyTask(const string& dow, string title, int id){		
 
         map<int,char> days;
         days[0] = 'M';

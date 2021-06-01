@@ -17,8 +17,9 @@ class IndivTask : public Task {
 		IndivTask(const string& dow, string title);
 		//virtual ~IndivTask() {}
 		
-		virtual void markComplete();
-		virtual void modifyTask(const string& dow, string title);
+		virtual void remove(int id);
+		virtual void markComplete(int id);
+		virtual void modifyTask(const string& dow, string title, int id);
 };
 
 
