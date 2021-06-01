@@ -5,4 +5,4 @@ Makefile
 lib/
 
 test
-main.cpp
+main
