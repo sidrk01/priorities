@@ -147,6 +147,15 @@ TEST(SortAscending, daysofWeekSort){
 	EXPECT_EQ(init->todo.at(0)->daysOfWeek, "MT"); 
 }
 
+TEST(SortAscending, noneofWeekSort){
+	vector<Task*> userTask;
+	
+	Strategy* init = new Strategy(userTask);
+	Sort_Ascending* checkComp = new Sort_Ascending(2, init);
+	
+	EXPECT_ANY_THROW(checkComp->organize());	
+}
+	
 TEST(SortDescending, CheckNoneComplete){
         vector<Task*> userTasks;
         Task* task1 = new IndivTask("ynnnnnn", "Math");
@@ -209,6 +218,17 @@ TEST(SortDescending, TitleSort){
 	checkComp->organize();
 	EXPECT_EQ(init->todo.at(0), task2);	
 }
+
+TEST(SortDescending, noneWeekSort){
+        vector<Task*> userTask;
+
+        Strategy* init = new Strategy(userTask);
+        Sort_Descending* checkComp = new Sort_Descending(2, init);
+
+        EXPECT_ANY_THROW(checkComp->organize());
+}
+
+
 /*
 TEST(SortRandom, SortRand){
         //---- testing sort_rand:       

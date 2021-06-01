@@ -44,7 +44,7 @@ class Strategy {
 	}		
 	cout << "||" << setw(3) << finish << setw(4) 
 	<< "||" << setw(8) << todo.at(i)->daysOfWeek << setw(3)  
-	<< "||" << setw(27) << todo.at(i)->title << setw(6) 
+	<< "||" << setw(23) << todo.at(i)->title << setw(10) 
 	<< "||" << setw(4) << todo.at(i)->id << setw(4) 
 	<< "||" << endl;	
 	}
