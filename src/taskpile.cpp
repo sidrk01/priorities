@@ -1,10 +1,15 @@
 #include "../header/taskpile.hpp"
-#include "../header/task.hpp"
-#include "../header/indivtask.hpp"
+//#include "../header/task.hpp"
+
 using namespace std;
 
-void TaskPile::markComplete(){
-	this->complete = true;
+void TaskPile::markComplete(int id){
+	if(this->id == id){
+		this->complete = true;
+	}
+	for(int i = 0; i < tasks.size(); ++i){
+		tasks.at(i)->markComplete(id);
+	}
 }
 
 TaskPile::TaskPile(string title){
@@ -17,7 +22,11 @@ void TaskPile::add_task(Task* task){
 	tasks.push_back(task);			
 }
 
-void TaskPile::modifyTask(const string& dow, string title, int id){
+void TaskPile::modifyTask(string dow, string title, int id){
+	if(this->id == id){
+		this->title = title;
+		return;
+	}
 	for(int i = 0; i < tasks.size(); ++i){
                 if(id == tasks.at(i)->id){
                 	tasks.at(i)->title = title;
@@ -25,7 +34,7 @@ void TaskPile::modifyTask(const string& dow, string title, int id){
         }
 }
 
-void TaskPile::remove(int id){ //use this
+void TaskPile::removeTask(int id){ //use this
 	if(this->id == id){
 		delete this;
 		return;
@@ -36,7 +45,7 @@ void TaskPile::remove(int id){ //use this
 		// 	tasks.erase(tasks.begin()+i);
 		// 	delete t;
 		// }
-		tasks->remove(id);
+		tasks.at(i)->removeTask(id);
 	}	
 }
 
