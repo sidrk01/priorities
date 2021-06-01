@@ -28,6 +28,7 @@ class Client {
 		void inputCompleteTask(bool isPile);
 		void inputRemoveTask(bool isPile);
                 int inputPrintMenu();
+		int validateId();
 	public:
 		Client();
 		void run();

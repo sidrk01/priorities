@@ -1,9 +1,9 @@
 #include "../header/client.hpp"
-#include "../header/indivtask.hpp"
-#include "../header/taskpile.hpp"
-#include "../header/sortascending.hpp"
-#include "../header/sortdescending.hpp"
-#include "../header/sortrandom.hpp"
+#include "../src/indivtask.cpp"
+#include "../src/taskpile.cpp"
+#include "../src/sortascending.cpp"
+#include "../src/sortdescending.cpp"
+#include "../src/sortrandom.cpp"
 #include <sstream>
 
 Client::Client(){
@@ -150,11 +150,28 @@ void Client::inputTask(bool isPile, bool isToPile, bool isMod) {
 		}
 		for (unsigned int i = 0; i < taskInit->todo.size(); i++){
 			if (taskInit->todo.at(i)->id == id){
-				taskInit->todo.at(i)->modifyTask(dow, title);
+				taskInit->todo.at(i)->modifyTask(dow, title, id);
 				i = taskInit->todo.size();
 			}
 		}
 	}
+}
+
+int Client::validateId(){
+	int id;
+        string id_input;
+        while (true) {
+              cout << "Enter the task ID: ";
+              getline(cin, id_input);
+              stringstream validate(id_input);
+              if (validate >> id && !(validate >> id_input) && id >= 1 && id <= 100) {// REPLACE 100 WITH nextId
+			break;
+              }
+
+              cin.clear();
+              cerr << "IDs are >= 1 and <= " << ".\n"; // add nextId in between these two strings
+       }	
+       return id;
 }
 
 void Client::displayPrintMenu() {
@@ -179,17 +196,19 @@ int Client::inputMenu(const int menuMax) {
 }
 
 void Client::inputCompleteTask(bool isPile) {	
+	int idChoice = validateId();
 	for (unsigned int i = 0; i < taskInit->todo.size(); i++){
-		if (taskInit->todo.at(i)->id == id){
-			taskInit->todo.at(i)->markComplete(id);
+		if (taskInit->todo.at(i)->id == idChoice){
+			taskInit->todo.at(i)->markComplete(idChoice);
 		}
 	}	
 	cout << "complete\n";
 }
 
 void Client::inputRemoveTask(bool isPile) {
-	for (unsigned int i = 0; i < taskInit->todo.at(i); i++){
-                if (taskInit->todo.at(i)->id == id){
+	int idChoice = validateId();
+	for (unsigned int i = 0; i < taskInit->todo.size(); i++){
+                if (taskInit->todo.at(i)->id == idChoice){
                         taskInit->todo.erase(taskInit->todo.begin() + i);
                 }
         }
@@ -257,14 +276,14 @@ void Client::run() {
                                 break;
                         case 5://ascending
 				// if no tasks (nextId == 1), let user know + break;
- 	                        int choice2 = inputPrintMenu();
-				new Sort_Ascending(choice, taskInit);
+ 	                        //int choice1 = inputPrintMenu();
+				new Sort_Ascending(inputPrintMenu(), taskInit);
 				taskInit->print();
                                 break;
                         case 6://descending
 				// if no tasks (nextId == 1), let user know + break;
-				int choice1 = inputPrintMenu();
-				new Sort_Descending(choice1, taskInit);
+				//int choice2 = inputPrintMenu();
+				new Sort_Descending(inputPrintMenu(), taskInit);
 				taskInit->print();
 				break;
                         case 7: 
