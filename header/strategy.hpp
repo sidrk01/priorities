@@ -68,7 +68,15 @@ class Strategy {
 //			todo.push_back(userInput.at(i));
 //		}
 	}
+	
+	~Strategy() {
+		for (int i=0; i<todo.size(); i++)
+		{
+			delete todo.at(i);
+		}
 
+	}
+	
 	vector<int> pileIDs;
 
 	bool print(){
