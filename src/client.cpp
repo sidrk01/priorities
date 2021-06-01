@@ -26,8 +26,8 @@ void Client::displayMainMenu() {
 		"5 ---Print in Ascending Order---\n" <<
 		"6 ---Print in Descending Order---\n" <<
 		"7 ---Print in Random Order---\n" <<
-		"8 ---Print Individual Task---\n" <<
-		"9 ---Exit---\n";
+//		"8 ---Print Individual Task---\n" <<
+		"8 ---Exit---\n";
 }
 
 bool Client::validateDow(string dow) {
@@ -262,7 +262,7 @@ int Client::inputPrintMenu() {
 
 void Client::run() {
 	int mmChoice;
-	const int mmMax = 10;
+	const int mmMax = 9;
 	bool isPile;
 	bool isToPile;
 	
@@ -312,16 +312,16 @@ void Client::run() {
 				sortrand();
 				taskInit->print();
                                 break;
-                        case 8: 
+                     /*   case 8: 
 				// if no tasks (nextId == 1), let user know + break;
                                 // print information about one task (pile)
 				taskInit->print();
-				break;
-			case 9:
+				break;*/
+			case 8:
 				cout << "Goodbye!" << endl;
 				displayGraphic();
 				break;
-                        case 10:
+                        case 9:
                                 cout << "EASTER EGG FOUND: displaying awesome graphic" << endl;
                                 displayGraphic();
                                 break;
