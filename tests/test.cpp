@@ -7,12 +7,9 @@
 #include "../src/sortdescending.cpp"
 #include "../src/sortascending.cpp"
 #include "../src/sortrandom.cpp"
-//#include "sort_ascendingtest.hpp"
+#include "sort_ascendingtest.hpp"
 //#include "sort_descendingtests.hpp"
-//#include "indivtask_test.hpp"
-//#include "sort_ascendingtest.hpp"
-//#include "sort_descendingtests.hpp"
-//#include "strategytest.hpp"
+#include "strategytest.hpp"
 #include "taskpile_test.hpp"
 #include <string>
 
