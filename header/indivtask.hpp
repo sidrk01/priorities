@@ -13,7 +13,6 @@ class IndivTask : public Task {
 		
 	public:
 //		Strategy* sort;
-		
 		IndivTask(const string& dow, string title);
 		//virtual ~IndivTask() {}
 		
