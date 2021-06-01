@@ -20,4 +20,3 @@ class Sort_Random: public Order {
 
 };
 #endif//__SORT_RANDOM_HPP
-
