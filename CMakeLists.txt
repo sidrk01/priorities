@@ -10,7 +10,6 @@ ADD_EXECUTABLE(test
 )
 
 ADD_EXECUTABLE(main
-    src/client.cpp
     src/main.cpp
 )
 

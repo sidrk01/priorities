@@ -3,11 +3,16 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
+#include "indivtask.hpp"
+#include "strategy.hpp"
 
 using namespace std;
 
 class Client {
-	private:		
+	private:	
+		Strategy* taskInit;	
+	
 		void displayGraphic();
 		void displayMainMenu();
                 void displayPrintMenu();
@@ -23,7 +28,7 @@ class Client {
 		void inputRemoveTask(bool isPile);
                 void inputPrintMenu();
 	public:
-		Client() { }
+		Client();
 		void run();
 };
 
