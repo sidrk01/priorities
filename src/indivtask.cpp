@@ -31,20 +31,26 @@ IndivTask::IndivTask(const string& dow, string title) {
     	}
 
 	this->title = title;
+
+	//this->group = group;
 }
 
-void IndivTask::remove(int id) {
+/*
+void IndivTask::removeTask(int id) {
 	if (this->id == id) {
 		delete this;
-	}
+	//	return;
+	}	
 }
+*/
 
 void IndivTask::markComplete(int id) {
-	this->complete = true;
+  if(this->id == id)
+	  this->complete = true;
+    
 }
 
-void IndivTask::modifyTask(const string& dow, string title, int id){		
-
+void IndivTask::modifyTask(string dow, string title, int id){		
         map<int,char> days;
         days[0] = 'M';
         days[1] = 'T';

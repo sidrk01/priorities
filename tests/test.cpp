@@ -3,13 +3,13 @@
 
 #include "gtest/gtest.h"
 #include "../src/indivtask.cpp"
-#include"indivtask_test.hpp"
+#include "indivtask_test.hpp"
 #include "../src/sortdescending.cpp"
 #include "../src/sortascending.cpp"
 #include "../src/sortrandom.cpp"
 #include "sort_ascendingtest.hpp"
 #include "sort_descendingtests.hpp"
-//#include "indivtask_test.hpp"
+#include "taskpile_test.hpp"
 #include <string>
 
 
