@@ -7,10 +7,7 @@ using namespace std;
 
 IndivTask::IndivTask(const string& dow, string title) {
     	this->complete = false;
-	if (dow.length() != 7) {
-        	throw std::invalid_argument("Something went wrong");
-    	}
-    
+
     	map<int,char> days;
     	days[0] = 'M';
     	days[1] = 'T';
@@ -34,25 +31,19 @@ IndivTask::IndivTask(const string& dow, string title) {
     	}
 
 	this->title = title;
-	this->group = group;
 }
 
-void IndivTask::markComplete() {
+void IndivTask::remove(int id) {
+	if (this->id == id) {
+		delete this;
+	}
+}
+
+void IndivTask::markComplete(int id) {
 	this->complete = true;
 }
 
-void IndivTask::remove() {
-	
-}
-
-string IndivTask::printToDo() {
-	
-}
-
-void IndivTask::modifyTask(const string& dow, string title){		
-	if (dow.length() != 7) {
-                throw std::invalid_argument("Something went wrong");
-        }
+void IndivTask::modifyTask(const string& dow, string title, int id){		
 
         map<int,char> days;
         days[0] = 'M';

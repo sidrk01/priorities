@@ -14,17 +14,14 @@ class Task {
 		bool complete;
                 string daysOfWeek;
                 string title;
-                string group;
 		static int nextId;
 		int id;
 		
-		Task() { id = nextId++; }
+		Task() { id = nextId++; }		
 		//virtual ~Task() {}
-
-		virtual void markComplete() = 0;
-		virtual string printToDo() = 0;
-		virtual void modifyTask(const string& dow, string title) = 0;
-		virtual void remove() = 0;
+		virtual void remove(int id) = 0;
+		virtual void markComplete(int id) = 0;
+		virtual void modifyTask(const string& dow, string title, int id) = 0;
 };
 
  int Task::nextId = 1;

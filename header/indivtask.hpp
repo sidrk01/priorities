@@ -14,14 +14,14 @@ class IndivTask : public Task {
 	public:
 //		Strategy* sort;
 		IndivTask(const string& dow, string title);
-
 		//virtual ~IndivTask() {}
 		
-		virtual void remove();
-		virtual void  markComplete();
-		virtual string printToDo();
-		virtual void modifyTask(const string& dow, string title);		
+		virtual void remove(int id);
+		virtual void markComplete(int id);
+		virtual void modifyTask(const string& dow, string title, int id);
 };
+
+
 
 #endif //__INDIVTASK_HPP__
 

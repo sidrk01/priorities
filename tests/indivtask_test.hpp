@@ -4,10 +4,18 @@
 #include <string>
 #include "../header/indivtask.hpp"
 
+TEST(IndivID, MultTasks){
+	Task* userTask = new IndivTask("nnynnyy", "Biology");
+        Task* userTask1 = new IndivTask("nnynnyy", "Astrology");
+
+        EXPECT_EQ(userTask1->id, 2);
+
+}
+
 TEST(IndivConstruct, OneDayOfWeek){
- 	IndivTask userTask("ynnnnnn", "Math");
-	string s1 = userTask.daysOfWeek;
-	string s2 = userTask.title;
+ 	Task* userTask = new IndivTask("ynnnnnn", "Math");
+	string s1 = userTask->daysOfWeek;
+	string s2 = userTask->title;
 	string fullStr = s1 + " " + s2;
 	
 	EXPECT_EQ(fullStr, "M Math");	
@@ -15,9 +23,9 @@ TEST(IndivConstruct, OneDayOfWeek){
 
 
 TEST(IndivConstruct, MulipleDaysOfWeek){
-        IndivTask userTask("nnynnyy", "Biology");
-        string s1 = userTask.daysOfWeek;
-        string s2 = userTask.title;
+        Task* userTask = new IndivTask("nnynnyy", "Biology");
+        string s1 = userTask->daysOfWeek;
+        string s2 = userTask->title;
         string fullStr = s1 + " " + s2;
 
 	EXPECT_EQ(fullStr, "WSU Biology");
