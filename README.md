@@ -13,8 +13,8 @@
   * [Valgrind](https://valgrind.org/)- We will use Valgrind to identify memory issues and leaks. 
 
 ## UI Elements
- inputs -  title, description, type of event, the priority it gets, duration, and due date. 
- outputs - menu that displays the events according to a specific category.
+ * inputs -  title, description, type of event, the priority it gets, duration, and due date. 
+ * outputs - menu that displays the events according to a specific category.
 
 ## Design Patterns
 We will be using the Composite design pattern in order to address the issue on how tasks are going to be categorized. It will also address the complexity of each task and sub-task. Since the tasks the user may implement in the scheduler can vary in type, we can allow the user to create their task and then modify that to fit in with their predefined categories. Using the composite design pattern, the user can create a rudimentary object of type Task that goes under the category the user defines it under.
